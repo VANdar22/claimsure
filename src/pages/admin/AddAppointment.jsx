@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import { format } from 'date-fns';
-import { FiUser, FiMail, FiPhone, FiTruck, FiCalendar, FiClock, FiFileText } from 'react-icons/fi';
+import { FiUser, FiMail, FiPhone, FiTruck, FiCalendar, FiClock, FiFileText, FiChevronDown, FiCheck } from 'react-icons/fi';
+import { Listbox, Transition } from '@headlessui/react';
 
 export default function AddAppointment({ appointmentToEdit, onSuccess, onCancel }) {
   const navigate = useNavigate();
@@ -26,138 +27,24 @@ export default function AddAppointment({ appointmentToEdit, onSuccess, onCancel 
       value: 'greater-accra',
       label: 'Greater Accra',
       branches: [
-        { value: 'accra-central', label: 'Accra Central' },
-        { value: 'east-legon', label: 'East Legon' },
-        { value: 'spintex', label: 'Spintex' },
-        { value: 'tema', label: 'Tema' },
-        { value: 'madina', label: 'Madina' }
+        { value: 'accra', label: 'Accra Branch' },
+        { value: 'legon', label: 'Legon Branch' },
+        { value: 'motoway', label: 'Motoway Branch' }
       ]
     },
     {
       value: 'ashanti',
       label: 'Ashanti',
       branches: [
-        { value: 'kumasi-central', label: 'Kumasi Central' },
-        { value: 'asantemansu', label: 'Asante-Manso' },
-        { value: 'suame', label: 'Suame' },
-        { value: 'tanoso', label: 'Tanoso' }
-      ]
-    },
-    {
-      value: 'eastern',
-      label: 'Eastern',
-      branches: [
-        { value: 'koforidua', label: 'Koforidua' },
-        { value: 'nsawam', label: 'Nsawam' },
-        { value: 'suhum', label: 'Suhum' }
+        { value: 'kumasi', label: 'Kumasi Branch' },
+        { value: 'tamale', label: 'Tamale Branch' }
       ]
     },
     {
       value: 'western',
       label: 'Western',
       branches: [
-        { value: 'takoradi', label: 'Takoradi' },
-        { value: 'tarkwa', label: 'Tarkwa' },
-        { value: 'sekondi', label: 'Sekondi' }
-      ]
-    },
-    {
-      value: 'central',
-      label: 'Central',
-      branches: [
-        { value: 'cape-coast', label: 'Cape Coast' },
-        { value: 'winneba', label: 'Winneba' },
-        { value: 'elmina', label: 'Elmina' }
-      ]
-    },
-    {
-      value: 'volta',
-      label: 'Volta',
-      branches: [
-        { value: 'ho', label: 'Ho' },
-        { value: 'hohoe', label: 'Hohoe' },
-        { value: 'keta', label: 'Keta' }
-      ]
-    },
-    {
-      value: 'northern',
-      label: 'Northern',
-      branches: [
-        { value: 'tamale', label: 'Tamale' },
-        { value: 'yendi', label: 'Yendi' },
-        { value: 'savelugu', label: 'Savelugu' }
-      ]
-    },
-    {
-      value: 'upper-east',
-      label: 'Upper East',
-      branches: [
-        { value: 'bolgatanga', label: 'Bolgatanga' },
-        { value: 'navrongo', label: 'Navrongo' }
-      ]
-    },
-    {
-      value: 'upper-west',
-      label: 'Upper West',
-      branches: [
-        { value: 'wa', label: 'Wa' },
-        { value: 'tumu', label: 'Tumu' }
-      ]
-    },
-    {
-      value: 'bono',
-      label: 'Bono',
-      branches: [
-        { value: 'sunyani', label: 'Sunyani' },
-        { value: 'wenchi', label: 'Wenchi' }
-      ]
-    },
-    {
-      value: 'bono-east',
-      label: 'Bono East',
-      branches: [
-        { value: 'techiman', label: 'Techiman' },
-        { value: 'kintampo', label: 'Kintampo' }
-      ]
-    },
-    {
-      value: 'ahafo',
-      label: 'Ahafo',
-      branches: [
-        { value: 'goaso', label: 'Goaso' },
-        { value: 'bechem', label: 'Bechem' }
-      ]
-    },
-    {
-      value: 'savannah',
-      label: 'Savannah',
-      branches: [
-        { value: 'damongo', label: 'Damongo' },
-        { value: 'buipe', label: 'Buipe' }
-      ]
-    },
-    {
-      value: 'north-east',
-      label: 'North East',
-      branches: [
-        { value: 'nalerigu', label: 'Nalerigu' },
-        { value: 'gambaga', label: 'Gambaga' }
-      ]
-    },
-    {
-      value: 'oti',
-      label: 'Oti',
-      branches: [
-        { value: 'dambai', label: 'Dambai' },
-        { value: 'jasikan', label: 'Jasikan' }
-      ]
-    },
-    {
-      value: 'western-north',
-      label: 'Western North',
-      branches: [
-        { value: 'sefwi-wiawso', label: 'Sefwi Wiawso' },
-        { value: 'enchi', label: 'Enchi' }
+        { value: 'takoradi', label: 'Takoradi Branch' }
       ]
     }
   ];
@@ -273,6 +160,9 @@ export default function AddAppointment({ appointmentToEdit, onSuccess, onCancel 
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      {/* Custom dropdown styles */}
+      <style jsx global>{`n        
+      `}</style>
 
       {error && (
         <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700">
@@ -430,25 +320,54 @@ export default function AddAppointment({ appointmentToEdit, onSuccess, onCancel 
                 <span className="text-red-500 ml-1">*</span>
               </div>
               <div className="relative">
-                <select
-                  id="region"
-                  name="region"
-                  required
-                  value={formData.region}
-                  onChange={handleChange}
-                  className="w-full px-0 py-2 border-0 border-b border-gray-200 focus:border-[#EB0A1E] focus:ring-0 focus:outline-none transition-colors duration-200 bg-transparent appearance-none"
-                >
-                  {regionsData.map((region) => (
-                    <option key={region.value} value={region.value}>
-                      {region.label}
-                    </option>
-                  ))}
-                </select>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
+                <Listbox value={formData.region} onChange={(value) => handleChange({ target: { name: 'region', value } })}>
+                  {({ open }) => (
+                    <>
+                      <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-3 pl-4 pr-10 text-left border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#EB0A1E] focus:border-[#EB0A1E] sm:text-sm">
+                        <span className="block truncate">
+                          {formData.region ? regionsData.find(r => r.value === formData.region)?.label : 'Select a region'}
+                        </span>
+                        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                          <FiChevronDown className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                        </span>
+                      </Listbox.Button>
+                      <Transition
+                        show={open}
+                        as={Fragment}
+                        leave="transition ease-in duration-100"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                      >
+                        <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                          {regionsData.map((region) => (
+                            <Listbox.Option
+                              key={region.value}
+                              className={({ active, selected }) =>
+                                `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                  active ? 'bg-red-100 text-red-900' : 'text-gray-900'
+                                } ${selected ? 'bg-red-50' : ''}`
+                              }
+                              value={region.value}
+                            >
+                              {({ selected }) => (
+                                <>
+                                  <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+                                    {region.label}
+                                  </span>
+                                  {selected ? (
+                                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-red-600">
+                                      <FiCheck className="h-5 w-5" aria-hidden="true" />
+                                    </span>
+                                  ) : null}
+                                </>
+                              )}
+                            </Listbox.Option>
+                          ))}
+                        </Listbox.Options>
+                      </Transition>
+                    </>
+                  )}
+                </Listbox>
               </div>
             </div>
 
@@ -461,30 +380,74 @@ export default function AddAppointment({ appointmentToEdit, onSuccess, onCancel 
                 <span className="text-red-500 ml-1">*</span>
               </div>
               <div className="relative">
-                <select
-                  id="branch"
-                  name="branch"
-                  required
-                  value={formData.branch}
-                  onChange={handleChange}
+                <Listbox 
+                  value={formData.branch} 
+                  onChange={(value) => handleChange({ target: { name: 'branch', value } })}
                   disabled={!formData.region}
-                  className="w-full px-0 py-2 border-0 border-b border-gray-200 focus:border-[#EB0A1E] focus:ring-0 focus:outline-none transition-colors duration-200 bg-transparent appearance-none disabled:opacity-50"
                 >
-                  <option value="">Select a branch</option>
-                  {branches.map((branch) => (
-                    <option key={branch.value} value={branch.value}>
-                      {branch.label}
-                    </option>
-                  ))}
-                </select>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-                {!formData.region && (
-                  <p className="mt-1 text-xs text-gray-500">Please select a region first</p>
-                )}
+                  {({ open }) => (
+                    <>
+                      <Listbox.Button 
+                        className={`relative w-full cursor-default rounded-lg py-3 pl-4 pr-10 text-left border shadow-sm focus:outline-none focus:ring-2 focus:ring-[#EB0A1E] focus:border-[#EB0A1E] sm:text-sm ${
+                          !formData.region 
+                            ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+                            : 'bg-white text-gray-700 border-gray-300'
+                        }`}
+                      >
+                        <span className="block truncate">
+                          {formData.branch 
+                            ? branches.find(b => b.value === formData.branch)?.label 
+                            : 'Select a branch'}
+                        </span>
+                        <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                          <FiChevronDown 
+                            className={`h-5 w-5 ${!formData.region ? 'text-gray-300' : 'text-gray-400'}`} 
+                            aria-hidden="true" 
+                          />
+                        </span>
+                      </Listbox.Button>
+                      {!formData.region && (
+                        <p className="mt-2 text-xs text-gray-500 bg-yellow-50 px-2 py-1 rounded">
+                          Please select a region first
+                        </p>
+                      )}
+                      <Transition
+                        show={open}
+                        as={Fragment}
+                        leave="transition ease-in duration-100"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                      >
+                        <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                          {branches.map((branch) => (
+                            <Listbox.Option
+                              key={branch.value}
+                              className={({ active, selected }) =>
+                                `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                                  active ? 'bg-red-100 text-red-900' : 'text-gray-900'
+                                } ${selected ? 'bg-red-50' : ''}`
+                              }
+                              value={branch.value}
+                            >
+                              {({ selected }) => (
+                                <>
+                                  <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+                                    {branch.label}
+                                  </span>
+                                  {selected ? (
+                                    <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-red-600">
+                                      <FiCheck className="h-5 w-5" aria-hidden="true" />
+                                    </span>
+                                  ) : null}
+                                </>
+                              )}
+                            </Listbox.Option>
+                          ))}
+                        </Listbox.Options>
+                      </Transition>
+                    </>
+                  )}
+                </Listbox>
               </div>
             </div>
 

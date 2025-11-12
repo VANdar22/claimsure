@@ -98,37 +98,59 @@ const CurrentTimeIndicator = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   
   useEffect(() => {
+    // Update more frequently for better accuracy (every 30 seconds)
     const timer = setInterval(() => {
       setCurrentTime(new Date());
-    }, 60000); // Update every minute
+    }, 30000);
     
     return () => clearInterval(timer);
   }, []);
   
+  // Calculate the exact position based on the current time
+  const calculatePosition = () => {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    
+    // Convert current time to minutes since 8:00 AM (start of work day)
+    const totalMinutes = (currentHour * 60 + currentMinute) - (8 * 60);
+    
+    // Calculate position in pixels (each hour is 60px, each minute is 1px)
+    // Adjust for the break from 12:30 PM to 1:00 PM (30 minutes)
+    let position = totalMinutes * 1.0; // 1px per minute
+    
+    // If it's after 12:30 PM, add the break time (30 minutes)
+    if (currentHour > 12 || (currentHour === 12 && currentMinute >= 30)) {
+      position += 30; // Add the 30-minute break
+    }
+    
+    return Math.max(0, position); // Ensure position is not negative
+  };
+  
+  const position = calculatePosition();
+  
+  // Only show if within working hours (8:00 AM to 2:30 PM)
   const currentHour = currentTime.getHours();
   const currentMinute = currentTime.getMinutes();
-  // Calculate position based on the exact time slots
-  const timeSlotHeights = {
-    '8:00 AM - 8:30 AM': 0,
-    '9:00 AM - 9:30 AM': 60,  // 60 minutes after first slot
-    '10:00 AM - 10:30 AM': 120,  // 2 hours after first slot
-    '1:00 PM - 1:30 PM': 300,    // 5 hours after first slot (accounting for lunch break)
-    '2:00 PM - 2:30 PM': 390     // 6.5 hours after first slot
-  };
-  const currentTimeStr = format(currentTime, 'h:mm a');
-  let currentSlot = workingHours.find(slot => {
-    const [start] = slot.split(' - ');
-    return currentTimeStr >= start;
-  }) || workingHours[0];
-  const topPosition = timeSlotHeights[currentSlot] || 0;
+  const isWorkingHours = 
+    (currentHour > 8 || (currentHour === 8 && currentMinute >= 0)) && // After 8:00 AM
+    (currentHour < 14 || (currentHour === 14 && currentMinute <= 30)); // Before 2:30 PM
+  
+  if (!isWorkingHours) return null;
   
   return (
     <div 
-      className="absolute left-0 right-0 h-px bg-red-500 z-10"
-      style={{ top: `${topPosition}px` }}
+      className="absolute left-0 right-0 h-0.5 bg-red-500 z-20 pointer-events-none"
+      style={{ 
+        top: `${position + 40}px`, // Add some offset to account for header
+        boxShadow: '0 0 0 1px white, 0 0 0 2px #EF4444' // Add a subtle shadow for better visibility
+      }}
     >
       <div className="absolute -left-2 -top-1.5 w-3 h-3 rounded-full bg-red-500"></div>
       <div className="absolute -right-2 -top-1.5 w-3 h-3 rounded-full bg-red-500"></div>
+      <div className="absolute right-0 -top-6 px-2 py-1 bg-red-500 text-white text-xs font-medium rounded whitespace-nowrap">
+        {format(currentTime, 'h:mm a')}
+      </div>
     </div>
   );
 };
@@ -358,7 +380,7 @@ const AvailabilityCalendar = ({ selectedDate, selectedTime, onDateSelect, onTime
 
     return (
       <div className="relative text-xs sm:text-sm">
-        {isCurrentWeekVisible && <CurrentTimeIndicator />}
+        <CurrentTimeIndicator />
         
         {workingHours.map((time, timeIndex) => (
           <div key={timeIndex} className="grid grid-cols-8 border-b border-gray-100">

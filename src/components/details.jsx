@@ -25,8 +25,7 @@ const Details = ({ formData, onFormChange }) => {
   const regions = [
     { id: 'greater-accra', name: 'Greater Accra' },
     { id: 'ashanti', name: 'Ashanti' },
-    { id: 'western', name: 'Western' },
-    { id: 'volta', name: 'Volta' },
+    { id: 'western', name: 'Western' }
   ];
 
   const branches = {
@@ -37,14 +36,11 @@ const Details = ({ formData, onFormChange }) => {
     ],
     'ashanti': [
       { id: 'kumasi-central', name: 'Kumasi Branch' },
-      { id: 'kumasi-central', name: 'KumasBranch' },
+      { id: 'tamale', name: 'Tamale Branch' },
     ],
     'western': [
       { id: 'takoradi', name: 'Takoradi Branch' },
-    ],
-    'volta': [
-      { id: 'ho', name: 'Ho Workshop' },
-    ],
+    ]
   };
 
   const selectedBranches = formData.region ? branches[formData.region] || [] : [];

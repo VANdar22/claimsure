@@ -261,6 +261,12 @@ const AppointmentsList = (props) => {
               service.toLowerCase().includes(searchTermLower)
             );
           break;
+          case 'region':
+            matchesSearch = appointment.region?.toLowerCase().includes(searchTermLower);
+            break;
+          case 'branch':
+            matchesSearch = appointment.branch?.toLowerCase().includes(searchTermLower);
+            break;
         default:
           matchesSearch = true;
       }
@@ -441,6 +447,8 @@ const AppointmentsList = (props) => {
                   <option value="vehicle">Vehicle Make/Model</option>
                   <option value="plate">License Plate</option>
                   <option value="service">Service Type</option>
+                  <option value="region">Region</option>
+                  <option value="branch">Branch</option>
                 </select>
               </div>
             </div>

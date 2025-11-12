@@ -112,7 +112,7 @@ const AdminLogin = () => {
       <div className="w-full py-12 px-4 sm:px-6 lg:px-8">
         {/* Logo/Branding */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-red-700">AutoTime</h1>
+          <h1 className="text-4xl font-bold text-red-700">AutoTime Scheduler</h1>
         </div>
         
         {/* Login Card */}
@@ -149,9 +149,7 @@ const AdminLogin = () => {
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                   Password
                 </label>
-                <a href="#" className="text-sm font-medium text-red-600 hover:text-red-500">
-                  Forgot password?
-                </a>
+                
               </div>
               <input
                 id="password"
@@ -199,7 +197,7 @@ const AdminLogin = () => {
         </div>
         
         <div className="mt-6 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} AutoCare. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} AutoTime Scheduler. All rights reserved.</p>
         </div>
       </div>
     </div>

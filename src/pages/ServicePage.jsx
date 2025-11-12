@@ -1,71 +1,67 @@
 "use client";
 import React from 'react';
 import { LayoutGrid } from '../components/ui/layout-grid';
-// Header and Footer are already included in AppLayout
-// Service icons removed
+import partsReplacementImg from '../assets/partsreplacement.png';
+import carRepairImg from '../assets/carrepairs.png';
+import periodicMaintenanceImg from '../assets/periodicmaintanance.png'; // Note: 'maintanance' is misspelled in the filename
+import batteryCheckImg from '../assets/batterycheck.png';
+import diagnosticsImg from '../assets/diagnosis.png'; // Using 'diagnosis.png' instead of 'diagnostics.png'
 
 const ServicePage = () => {
   const services = [
     {
-      title: "Engine Repair",
-      description: "Comprehensive engine diagnostics and repair services to keep your vehicle running smoothly.",
-      thumbnail: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      title: "Parts Replacement",
+      description: "High-quality replacement parts and professional installation services for your vehicle.",
+      emoji: '🔧',
+      thumbnail: partsReplacementImg
     },
     {
-      title: "Oil Change",
-      description: "Professional oil change services to maintain your engine's performance and longevity.",
-      thumbnail: "https://images.unsplash.com/photo-1603302576837-37596b2dcf89?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      title: "Repair Works",
+      description: "Expert repair services to fix any issues with your vehicle's mechanical and electrical systems.",
+      emoji: '🔨',
+      thumbnail: carRepairImg
     },
     {
-      title: "Brake Service",
-      description: "Complete brake inspection, repair, and replacement services for your safety.",
-      emoji: '🛑'
+      title: "Periodic Maintenance",
+      description: "Regular maintenance services to keep your vehicle running smoothly and efficiently.",
+      emoji: '⏱️',
+      thumbnail: periodicMaintenanceImg
     },
     {
-      title: "Battery Service",
-      description: "Battery testing, replacement, and electrical system diagnostics.",
-      emoji: '🔋'
-    },
-    {
-      title: "Tire Service",
-      description: "Tire rotation, balancing, alignment, and replacement services.",
-      emoji: '🛞'
-    },
-    {
-      title: "AC Service",
-      description: "Complete air conditioning system service and repair.",
-      emoji: '❄️'
-    },
-    {
-      title: "Maintenance",
-      description: "Regular maintenance services to prevent costly repairs down the road.",
-      emoji: '🔧'
+      title: "Battery Check",
+      description: "Comprehensive battery testing and replacement services to ensure reliable starts.",
+      emoji: '🔋',
+      thumbnail: batteryCheckImg
     },
     {
       title: "Diagnostics",
-      description: "Advanced diagnostic services to identify and fix any vehicle issues.",
-      emoji: '📊'
+      description: "Advanced diagnostic services to quickly identify and resolve any vehicle issues.",
+      emoji: '🔍',
+      thumbnail: diagnosticsImg
     }
   ];
 
   // Service card components
   const ServiceCard = ({ title, description, emoji, thumbnail }) => (
-    <div className="p-6 h-full">
-      <div className="h-full bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg">
+    <div className="h-full">
+      <div className="h-full bg-white rounded-lg overflow-hidden border border-gray-200 transition-all duration-300 hover:shadow-lg hover:border-[#EB0A1E]">
         {thumbnail ? (
-          <img 
-            src={thumbnail} 
-            alt={title} 
-            className="w-full h-48 object-cover"
-          />
+          <div className="relative h-40 overflow-hidden">
+            <img 
+              src={thumbnail} 
+              alt={title} 
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          </div>
         ) : (
-          <div className="h-48 bg-gray-100 flex items-center justify-center text-6xl">
+          <div className="h-40 bg-[#EB0A1E] flex items-center justify-center text-6xl text-white">
             {emoji}
           </div>
         )}
-        <div className="p-6">
+        <div className="p-5">
           <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-          <p className="text-gray-600">{description}</p>
+          <p className="text-gray-600 text-sm">{description}</p>
         </div>
       </div>
     </div>
@@ -89,27 +85,17 @@ const ServicePage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Hero Section */}
-      <div className="bg-gray-900 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Professional automotive services to keep your vehicle in top condition
-          </p>
-        </div>
-      </div>
-
       {/* Services Grid */}
       <div className="py-10 w-full bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-red-600">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="h-full">
                 <ServiceCard 
                   title={service.title}
                   description={service.description}
-                  icon={service.icon}
+                  emoji={service.emoji}
                   thumbnail={service.thumbnail}
                 />
               </div>
@@ -176,13 +162,35 @@ const ServicePage = () => {
                       <div className="flex-1">
                         <h3 className="font-semibold">Greater Accra Region</h3>
                         <ul className="mt-2 space-y-2 text-sm">
-                          <li className="flex justify-between">
-                            <span className="text-red-100">East Legon</span>
-                            <span>+233 24 123 4567</span>
+                          <li>
+                            <a 
+                              href="https://www.google.com/maps/place/Toyota+Ghana+Company+Limited,+Graphic+Road+Branch/@5.5582405,-0.3673428,12z/data=!4m10!1m2!2m1!1sToyota+Accra+Branch+Ghana!3m6!1s0xfdf90ab182d921d:0x8d6236928d2a9f79!8m2!3d5.5582405!4d-0.2231472!15sChlUb3lvdGEgQWNjcmEgQnJhbmNoIEdoYW5hIgOIAQFaGyIZdG95b3RhIGFjY3JhIGJyYW5jaCBnaGFuYZIBCmNhcl9kZWFsZXKaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUldkbVppUm1wQlJSQULgAQD6AQUIgQEQQA!16s%2Fg%2F1w456z9v?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-red-100 hover:underline"
+                            >
+                              Accra Branch
+                            </a>
                           </li>
-                          <li className="flex justify-between">
-                            <span className="text-red-100">Spintex</span>
-                            <span>+233 24 234 5678</span>
+                          <li>
+                            <a 
+                              href="https://www.google.com/maps/place/Toyota+Ghana+Company+Limited,+Legon+Branch/@5.6651432,-0.3384784,12z/data=!4m10!1m2!2m1!1sToyota+Accra+Branch+Ghana!3m6!1s0xfdf9d4b519d3517:0x10294fa5665e1d7a!8m2!3d5.6651432!4d-0.1942828!15sChlUb3lvdGEgQWNjcmEgQnJhbmNoIEdoYW5hIgOIAQFaGyIZdG95b3RhIGFjY3JhIGJyYW5jaCBnaGFuYZIBCmNhcl9yZXBhaXKaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUkthSEpxWDAxUkVBReABAPoBBAgAEDw!16s%2Fg%2F11t5_2hwpf?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-red-100 hover:underline"
+                            >
+                              Legon
+                            </a>
+                          </li>
+                          <li>
+                            <a 
+                              href="https://www.google.com/maps/place/Toyota+Ghana+Company+Limited/@5.6601806,-0.145928,13z/data=!4m10!1m2!2m1!1sToyota+Accra+tema!3m6!1s0xfdf81e7e732be6b:0xc52b29e1e2ac9c2f!8m2!3d5.6601806!4d-0.0738302!15sChFUb3lvdGEgQWNjcmEgdGVtYSIDiAEBWhMiEXRveW90YSBhY2NyYSB0ZW1hkgEKY2FyX2RlYWxlcuABAA!16s%2Fg%2F11hzf60fjd?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-red-100 hover:underline"
+                            >
+                              Motoway Branch
+                            </a>
                           </li>
                         </ul>
                       </div>
@@ -199,10 +207,26 @@ const ServicePage = () => {
                       </div>
                       <div className="flex-1">
                         <h3 className="font-semibold">Ashanti Region</h3>
-                        <ul className="mt-2 text-sm">
-                          <li className="flex justify-between">
-                            <span className="text-red-100">Kumasi Central</span>
-                            <span>+233 24 345 6789</span>
+                        <ul className="mt-2 space-y-2 text-sm">
+                          <li>
+                            <a 
+                              href="https://www.google.com/maps/place/Toyota+Ghana+Kumasi/@6.6870923,-1.6417068,15z/data=!3m1!4b1!4m6!3m5!1s0xfdb96e950087133:0xc7b3dcfe45822281!8m2!3d6.6870926!4d-1.6232527!16s%2Fg%2F11cs171m_j?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-red-100 hover:underline"
+                            >
+                              Kumasi Branch
+                            </a>
+                          </li>
+                          <li>
+                            <a 
+                              href="https://www.google.com/maps/place/Toyota+Ghana+Company+Limited+-Tamale+Office/@9.3820515,-0.8661556,17z/data=!3m1!4b1!4m6!3m5!1s0xfd43d68bf705dc7:0xe8e5956c8b7888a!8m2!3d9.3820515!4d-0.8635807!16s%2Fg%2F11kgkfbs8l?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-red-100 hover:underline"
+                            >
+                              Tamale Branch
+                            </a>
                           </li>
                         </ul>
                       </div>
@@ -218,19 +242,17 @@ const ServicePage = () => {
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold">Other Regions</h3>
+                        <h3 className="font-semibold">Western Region</h3>
                         <ul className="mt-2 space-y-2 text-sm">
-                          <li className="flex justify-between">
-                            <span className="text-red-100">Takoradi (Western)</span>
-                            <span>+233 24 456 7890</span>
-                          </li>
-                          <li className="flex justify-between">
-                            <span className="text-red-100">Koforidua (Eastern)</span>
-                            <span>+233 24 567 8901</span>
-                          </li>
-                          <li className="flex justify-between">
-                            <span className="text-red-100">Ho (Volta)</span>
-                            <span>+233 24 678 9012</span>
+                          <li>
+                            <a 
+                              href="https://www.google.com/maps/place/Toyota+Ghana+Company+Limited,+Takoradi+Branch/@4.9021556,-1.7609214,17z/data=!3m1!4b1!4m6!3m5!1s0xfe779f74556d0ef:0x85b74372c80e3269!8m2!3d4.9021556!4d-1.7583465!16s%2Fg%2F11f56g2ljm?entry=ttu&g_ep=EgoyMDI1MTEwOS4wIKXMDSoASAFQAw%3D%3D" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-red-100 hover:underline"
+                            >
+                              Takoradi Branch
+                            </a>
                           </li>
                         </ul>
                       </div>
