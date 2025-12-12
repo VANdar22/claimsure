@@ -1,58 +1,35 @@
 /** @type {import('tailwindcss').Config} */
-import animate from 'tailwindcss-animate';
+const animate = require('tailwindcss-animate');
 
-export default {
-  darkMode: ["class"],
+module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}"
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  plugins: [animate],
+  darkMode: "class",
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1rem",
       screens: {
         "2xl": "1400px",
       },
     },
-    colors: {
-      // Include default colors
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#000',
-      white: '#fff',
-      gray: {
-        100: '#f7fafc',
-        // ... other gray shades
-      },
-      red: {
-        600: '#dc2626', // This is the default red-600
-        // ... other red shades
-      },
-      // ... other default colors
-    },
-    fontSize: {
-      'xs': '0.75rem',
-      'sm': '0.875rem',
-      'base': '1rem',
-      'lg': '1.125rem',
-      'xl': '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '3.75rem',
-    },
     extend: {
+      fontFamily: {
+        sans: ['Clash Display Variable', 'sans-serif'],
+        'clash-display': ['Clash Display Variable', 'sans-serif'],
+        'montserrat-alt': ['Montserrat Alternates', 'sans-serif'],
+        sekuya: ['Sekuya', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        background: "#FFFFFF",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#0E38B1",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -75,16 +52,15 @@ export default {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-        // Remove card styling for a flatter look
         card: {
-          DEFAULT: "transparent",
-          foreground: "hsl(var(--foreground))",
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
       },
       borderRadius: {
-        lg: '0',
-        md: '0',
-        sm: '0',
+        lg: '0.5rem',
+        md: '0.375rem',
+        sm: '0.25rem',
       },
       keyframes: {
         "accordion-down": {
@@ -100,7 +76,10 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require('tailwindcss-animate'),
+  ],
 }
