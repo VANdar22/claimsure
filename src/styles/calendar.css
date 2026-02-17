@@ -1,0 +1,69 @@
+/* Calendar Modal Styles */
+/* Hide scrollbar for all browsers */
+.cal-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Main iframe styles */
+.cal-modal iframe {
+  width: 100%;
+  height: 90vh;
+  max-width: 1000px;
+  border: none;
+  overflow: hidden !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for WebKit/Blink */
+.cal-modal iframe::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+/* Target the iframe content */
+.cal-modal iframe body {
+  overflow: hidden !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar in the iframe content */
+.cal-modal iframe::-webkit-scrollbar,
+.cal-modal iframe::-webkit-scrollbar-track,
+.cal-modal iframe::-webkit-scrollbar-thumb {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cal-modal iframe {
+    height: 100vh;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .cal-modal {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}

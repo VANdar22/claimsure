@@ -17,8 +17,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['Clash Display Variable', 'sans-serif'],
+        sans: ['Montserrat', 'sans-serif'],
         'clash-display': ['Clash Display Variable', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
         'montserrat-alt': ['Montserrat Alternates', 'sans-serif'],
         sekuya: ['Sekuya', 'sans-serif'],
       },

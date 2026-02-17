@@ -1,50 +1,185 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import StaggeredMenu from './components/StaggeredMenu';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import CardNav from './components/CardNav';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
+import WhatMakesUsDifferent from './components/WhatMakesUsDifferent';
+import Logo from './assets/logoblue2.png';
+import Values from './components/Values';
+import Services from './pages/Services';
+import Insight from './pages/Insight';
+import InsightDetails from './pages/InsightDetails';
 
-const menuItems = [
-  { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-  { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
-  { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' },
-  { label: 'Gallery', ariaLabel: 'View Gallery', link: '/gallery' },
-];
+// This component will handle scrolling to top on route changes
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
 
-const socialItems = [
-  { label: 'Twitter', link: 'https://twitter.com' },
-  { label: 'Instagram', link: 'https://instagram.com' },
-  { label: 'Pinterest', link: 'https://pinterest.com' }
-];
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+const items = [
+    {
+      label: "About",
+      bgColor: "rgba(14, 56, 177, 0.9)",
+      textColor: "#FFFFFF",
+      links: [
+        { label: "Company Overview", ariaLabel: "About Company", to: "/about" },
+        { label: "Values", ariaLabel: "Our Values" , to: "/values"},
+        { label: "Why Choose ClaimSure", ariaLabel: "Why Choose Us" , to: "/WhatMakesUsDifferent"}
+      ]
+    },
+    {
+      label: "Services", 
+      bgColor: "rgba(14, 56, 177, 0.9)",
+      textColor: "#FFFFFF",
+      links: [
+        { label: "Solutions", ariaLabel: "Our services", to: "/services" },
+        { label: "Insights", ariaLabel: "Insights", to: "/insight" }
+      ]
+    },
+    {
+      label: "Contact",
+      bgColor: "rgba(14, 56, 177, 0.9)", 
+      textColor: "#FFFFFF",
+      links: [
+        { label: "Email", ariaLabel: "Email us" },
+        { label: "Twitter", ariaLabel: "Twitter" },
+        { label: "LinkedIn", ariaLabel: "LinkedIn" }
+      ]
+    }
+  ];
+
+// This is a wrapper component to handle the animated routes
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+              <Route path="/" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Home />
+                </motion.div>
+              } />
+              <Route path="/about" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <About />
+                </motion.div>
+              } />
+              <Route path="/contact" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Contact />
+                </motion.div>
+              } />
+              <Route path="/gallery" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Gallery />
+                </motion.div>
+              } />
+              <Route path="/WhatMakesUsDifferent" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <WhatMakesUsDifferent />
+                </motion.div>
+              } />
+              <Route path="/values" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Values />
+                </motion.div>
+              } />
+              <Route path="/services" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Services />
+                </motion.div>
+              } />
+              <Route path="/insight" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Insight />
+                </motion.div>
+              } />
+              <Route path="/insights/:id" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <InsightDetails />
+                </motion.div>
+              } />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen w-full flex flex-col overflow-hidden">
         {/* Fixed Navigation */}
-        <div className="fixed top-0 left-0 w-full z-50">
-          <StaggeredMenu
-            position="right"
-            items={menuItems}
-            socialItems={socialItems}
-            displaySocials={true}
-            openMenuButtonColor="transparent"
-            closeMenuButtonColor="transparent"
-            displayItemNumbering={true}
-            menuButtonColor="#0E38B1"
-            accentColor="#0E38B1"
+        <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md">
+          <CardNav 
+            items={items}
+            baseColor="rgba(255, 255, 255, 0.8)"
+            menuColor="rgba(14, 56, 177, 0.8)"
+            buttonBgColor="rgba(14, 56, 177, 0.8)"
+            buttonTextColor="#fff"
+            ease="power3.out"
+            theme="color"
+            className="bg-opacity-70"
+            logo={Logo}
           />
         </div>
 
         <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/gallery" element={<Gallery />} />
-          </Routes>
+          <AnimatedRoutes />
         </main>
       </div>
     </Router>

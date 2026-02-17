@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import HeroSection from '../components/HeroSection';
-import SchoolIntro from '../components/SchoolIntro';
-import NewsSection from '../components/NewsSection';
-import BentoGridSecondDemo from '../components/bento-grid-demo-2';
+import AboutSection from '../components/AboutSection';
+import ServicesAccordion from '../components/ServicesAccordion';
 import Footer from '../components/Footer';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         <HeroSection />
-        <SchoolIntro />
+        <AboutSection />
+        <div className="bg-white py-16">
+          <ServicesAccordion />
+        </div>
       </main>
       <Footer />
     </div>

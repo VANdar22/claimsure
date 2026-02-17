@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { motion } from 'framer-motion';
+import AnimatedText from '../components/AnimatedText';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
+  const [recaptchaToken, setRecaptchaToken] = useState('');
+  const recaptchaRef = useRef(null);
+  
+  const RECAPTCHA_SITE_KEY = '6Lcn024sAAAAAOB34MQ1E-6b161ndDB1rq6LUXGm'; // reCAPTCHA site key
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,27 +27,102 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleRecaptchaChange = (token) => {
+    setRecaptchaToken(token);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    
+    if (!recaptchaToken) {
+      alert('Please complete the reCAPTCHA verification');
+      return;
+    }
+    
+    try {
+      // Here you would typically send the form data and recaptchaToken to your backend
+      console.log('Form submitted:', { ...formData, recaptchaToken });
+      
+      // Reset form and reCAPTCHA
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      setRecaptchaToken('');
+      recaptchaRef.current.reset();
+      
+      alert('Thank you for your message. We will get back to you soon!');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('There was an error submitting the form. Please try again.');
+    }
+  };
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
   };
 
   return (
-    <div className="min-h-screen pt-20 px-4 bg-white font-['Montserrat']">
-      <div className="max-w-6xl mx-auto py-8">
-        <div className="mb-12">
-          <h1 className="text-4xl font-semibold text-[#0E38B1] mb-3">Contact Us</h1>
-          <p className="text-black/80  text-2xl text-left ">
-            We are always happy to assist with inquiries about admissions, academics, or general school information. 
-            Reach out using the details below.
-          </p>
-        </div>
+    <div className="min-h-screen pt-20 px-4 bg-white font-montserrat text-[#1a1a1a]">
+      <div className="max-w-6xl mx-auto py-16 sm:py-24">
+        <motion.div 
+          className="mb-12"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          <motion.div variants={itemVariants}>
+            <AnimatedText 
+              className="text-xs sm:text-sm font-light uppercase tracking-widest mb-4 sm:mb-6 text-[#0E38B1] block"
+              split={false}
+            >
+              Get in Touch
+            </AnimatedText>
+          </motion.div>
+          
+          <motion.div variants={itemVariants}>
+            <AnimatedText 
+              className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#0E38B1] mb-6 sm:mb-8"
+              split={true}
+            >
+              We're here to help with any questions.
+            </AnimatedText>
+          </motion.div>
+          
+          <motion.div variants={itemVariants}>
+            <p className="text-sm sm:text-base md:text-lg text-gray-900 leading-relaxed opacity-90 w-full">
+              We are always happy to assist with inquiries about admissions, academics, or general school information. 
+              Reach out using the details below.
+            </p>
+          </motion.div>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <div className="bg-white ">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Contact Information</h2>
+              <h2 className="text-xl font-normal text-[#0E38B1] mb-4">Contact Information</h2>
               
               <div className="space-y-5">
                 <div className="flex items-start">
@@ -47,7 +133,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-800">School Address</h3>
+                    <h3 className="font-normal text-gray-900">School Address</h3>
                     <p className="text-gray-600">Obuasi Complex JHS</p>
                     <p className="text-gray-600">Obuasi, Ashanti Region</p>
                     <p className="text-gray-600">Ghana</p>
@@ -61,7 +147,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-800">Phone Number</h3>
+                    <h3 className="font-normal text-gray-900">Phone Number</h3>
                     <p className="text-gray-600">+233 00 000 0000</p>
                   </div>
                 </div>
@@ -73,7 +159,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-800">Email Address</h3>
+                    <h3 className="font-normal text-gray-900">Email Address</h3>
                     <a href="mailto:info@obuasi.com" className="text-[#0E38B1] hover:underline">
                       info@obuasi.com
                     </a>
@@ -87,7 +173,7 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-800">Office Hours</h3>
+                    <h3 className="font-normal text-gray-900">Office Hours</h3>
                     <p className="text-gray-600">Monday – Friday: 8:00 AM – 4:00 PM</p>
                   </div>
                 </div>
@@ -96,7 +182,7 @@ const Contact = () => {
           </div>
           
           <div className="">
-            <h2 className="text-xl font-semibold text-gray-800 mb-5">Contact Form</h2>
+            <h2 className="text-xl font-normal text-[#0E38B1] mb-5">Contact Form</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm text-gray-700 mb-1">Name</label>
@@ -151,9 +237,17 @@ const Contact = () => {
                 />
               </div>
               
+              <div className="mb-4">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={RECAPTCHA_SITE_KEY}
+                  onChange={handleRecaptchaChange}
+                />
+              </div>
               <button
                 type="submit"
-                className="w-full bg-[#0E38B1] text-white py-2.5 px-4 font-medium hover:bg-[#0c2f8f] transition-colors"
+                className="w-full bg-[#0E38B1] text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50"
+                disabled={!recaptchaToken}
               >
                 Send Message
               </button>

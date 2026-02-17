@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Masonry from '../components/Masonry';
 
 // Import all images
@@ -24,6 +24,10 @@ const items = images.map((img, i) => ({
 }));
 
 const Gallery = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className="gallery-container p-4">
       <Masonry

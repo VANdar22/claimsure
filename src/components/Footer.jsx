@@ -1,210 +1,233 @@
-import React from 'react';
-import { ACCENT } from '@/constants/colors';
+import React from "react";
+import { ACCENT } from "@/constants/colors";
+import logo from "@/assets/logo.png";
+import footerBg from "@/assets/footerbg.png";
 
 const Footer = () => {
   const footerData = {
     branding: {
-      text: "Obuase Complex JHS",
+      text: "Claim Sure helps clients manage insurance claims easily and achieve fair, timely settlements. We use expert knowledge and structured guidance to support individuals and businesses throughout the entire claims process.",
       fontFamily: "'Montserrat', sans-serif",
-      fontWeight: 400,
+      fontWeight: 500,
       fontSize: {
-        base: "1.25rem",
-        md: "1.5rem"
+        base: "1rem",
+        md: "1.2rem",
       },
-      letterSpacing: "0.05em",
+      letterSpacing: "0.02em",
+      textAlign: "left",
       marginBottom: {
-        base: "0.75rem",
-        md: "1rem"
-      }
+        base: "1rem",
+        md: "1.5rem",
+      },
     },
+    sections: [
+      {
+        title: "HELPFUL LINKS",
+        links: [
+          { label: "Home", url: "/" },
+          { label: "Services", url: "/#services" },
+          { label: "About Us", url: "/about" },
+          { label: "Contact", url: "/contact" }
+          ,
+        ],
+        titleStyle: {
+          fontSize: {
+            base: "1rem",
+            md: "1.1rem"
+          },
+          fontWeight: 600,
+          letterSpacing: "0.02em",
+          marginBottom: "1rem"
+        },
+        linkStyle: {
+          fontSize: {
+            base: "0.9rem",
+            md: "1rem"
+          },
+          letterSpacing: "0.02em"
+        }
+      },
+      {
+        title: "CONTACT",
+        links: [
+          { label: "Email: info@claimsure.com", url: "mailto:info@claimsure.com" },
+          { label: "Phone: (555) 123-4567", url: "tel:5551234567" },
+          { label: "Address: 123 Claims St, City", url: "#" },
+          { label: "Twitter: @claimsure", url: "https://twitter.com/claimsure" },
+          { label: "LinkedIn: @claimsure", url: "https://linkedin.com/claimsure" },
+
+
+        ],
+        titleStyle: {
+          fontSize: {
+            base: "1rem",
+            md: "1.1rem"
+          },
+          fontWeight: 600,
+          letterSpacing: "0.02em",
+          marginBottom: "1rem"
+        },
+        linkStyle: {
+          fontSize: {
+            base: "0.9rem",
+            md: "1rem"
+          },
+          letterSpacing: "0.02em"
+        }
+      },
+    ],
     nav: {
-      links: [
-        { label: "CONTACT", url: "/contact" },
-        { label: "PRIVACY POLICY", url: "/privacy-policy" },
-        { label: "CONSENT PREFERENCES", url: "/consent-preferences" }
-      ],
       style: {
         fontFamily: "sans-serif",
         fontSize: {
-          base: "0.7rem",
-          sm: "0.8rem"
+          base: "0.8rem",
+          sm: "0.9rem",
         },
         fontWeight: 300,
-        letterSpacing: "0.12em",
-        color: "#333"
+        letterSpacing: "0.05em",
+        color: "#fff",
       },
       linksSpacing: {
-        base: "0.5rem",
-        sm: "1rem"
-      },
-      marginBottom: {
         base: "0.75rem",
-        md: "1rem"
-      }
-    },
-    socials: {
-      items: [
-        { platform: "instagram", url: "https://instagram.com" },
-        { platform: "tiktok", url: "https://tiktok.com" }
-      ],
-      gap: {
-        base: "1rem",
-        md: "1.25rem"
-      },
-      iconSize: {
-        base: "1rem",
-        md: "1.2rem"
+        sm: "1rem",
       },
       marginBottom: {
         base: "1rem",
-        md: "1.25rem"
-      }
+        md: "1.5rem",
+      },
     },
+
     copyright: {
       text: "All rights reserved - Copyright © 2025",
       fontSize: {
         base: "0.65rem",
-        sm: "0.75rem"
+        sm: "0.75rem",
       },
       fontWeight: 300,
       letterSpacing: "0.06em",
       fontFamily: "'Montserrat Alternates', sans-serif",
-      color: ACCENT
-    }
-  };
-
-  const SocialLink = ({ platform, url }) => {
-    const platformNames = {
-      instagram: 'INSTAGRAM',
-      tiktok: 'TIKTOK'
-    };
-
-    return (
-      <a 
-        href={url} 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="hover:opacity-70 transition-opacity duration-200 uppercase tracking-wider"
-        style={footerData.nav.style}
-      >
-        {platformNames[platform]}
-      </a>
-    );
+      color: ACCENT,
+    },
   };
 
   // Helper function to get responsive value
-  const getResponsiveValue = (value, breakpoint = 'base') => {
-    if (typeof value === 'object') {
+  const getResponsiveValue = (value, breakpoint = "base") => {
+    if (typeof value === "object") {
       return value[breakpoint] || value.base || value;
     }
     return value;
   };
 
   return (
-    <footer className="bg-gradient-to-b from-white to-blue-100 py-8 md:py-12">
-      <div 
-        className="mx-auto px-4 sm:px-6 py-4 md:py-6 text-center"
-        style={{
-          maxWidth: "1200px"
-        }}
-      >
+    <footer 
+      className="relative text-white font-montserrat flex flex-col min-h-0 overflow-hidden"
+      style={{
+        backgroundImage: `url(${footerBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div className="absolute inset-0 bg-black/30"></div>
+      <div className="py-8 md:py-12 flex-grow relative z-10">
+        <div className="mx-auto px-4 sm:px-6 py-4 md:py-6 text-center" style={{ maxWidth: "1200px" }}>
         {/* Branding */}
-        <div 
-          className="mb-6 md:mb-10"
+        <div
+          className="mb-6 md:mb-10 text-left"
           style={{
             fontFamily: footerData.branding.fontFamily,
             fontWeight: footerData.branding.fontWeight,
-            fontSize: getResponsiveValue(footerData.branding.fontSize, 'md'),
+            fontSize: getResponsiveValue(footerData.branding.fontSize, "md"),
             letterSpacing: footerData.branding.letterSpacing,
-            marginBottom: getResponsiveValue(footerData.branding.marginBottom, 'md'),
-            color: ACCENT
+            textAlign: footerData.branding.textAlign,
+            marginBottom: getResponsiveValue(
+              footerData.branding.marginBottom,
+              "md"
+            ),
+            color: "white",
+            maxWidth: "800px",
+            marginLeft: 0,
+            marginRight: "auto"
           }}
         >
           {footerData.branding.text}
         </div>
 
-        {/* Navigation */}
-        <nav 
-          className="mb-6 md:mb-10"
-          style={{
-            marginBottom: getResponsiveValue(footerData.nav.marginBottom, 'md')
-          }}
-        >
-          <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
-            {footerData.nav.links.map((link, index) => (
-              <li key={index}>
-                <a 
-                  href={link.url} 
-                  className="hover:opacity-70 transition-opacity duration-200"
-                  style={footerData.nav.style}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Social Icons */}
-        <div 
-          className="flex justify-center mb-10"
-          style={{
-            gap: footerData.socials.gap,
-            marginBottom: footerData.socials.marginBottom
-          }}
-        >
-          {footerData.socials.items.map((social, index) => (
-            <a 
-              key={index} 
-              href={social.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:opacity-70 transition-opacity duration-200"
-              style={{
-                fontSize: '0.9rem',
-                letterSpacing: '0.12em'
-              }}
-            >
-              <SocialLink platform={social.platform} url={social.url} />
-            </a>
-          ))}
-        </div>
-
-        {/* Copyright */}
-        <div 
-          className="mt-4 pt-4 border-t border-gray-400"
-        >
-          <div className="space-y-2 text-gray-700">
-            <p 
-              className="px-2"
-              style={{
-                fontSize: getResponsiveValue(footerData.copyright.fontSize, 'sm'),
-                fontWeight: footerData.copyright.fontWeight,
-                letterSpacing: footerData.copyright.letterSpacing,
-                fontFamily: footerData.copyright.fontFamily,
-                color: '#0E38B1',
-                lineHeight: '1.4'
-              }}
-            >
-              {footerData.copyright.text}
-            </p>
-            <p className="text-xs font-montserrat-alt text-[#0E38B1]/60  ">
-              Designed by{' '}
-              <a 
-                href="https://2v2studios.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-[#0E38B1] hover:underline"
-                style={{ 
-                  fontFamily: '"Flexing", sans-serif',
-                  fontWeight: 600,
-                  fontSize: '1.2rem',
-                  letterSpacing: '0.5px'
+        {/* Sections */}
+        <div className="flex flex-col md:flex-row -mx-1 md:-mx-2 mb-6 gap-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-3/4">
+            {footerData.sections.map((section, index) => (
+              <div key={index} className="text-center md:text-left px-1 md:px-2">
+              <h3 
+                className="text-white"
+                style={{
+                  fontSize: getResponsiveValue(section.titleStyle?.fontSize, 'md'),
+                  fontWeight: section.titleStyle?.fontWeight || 500,
+                  letterSpacing: section.titleStyle?.letterSpacing || '0.02em',
+                  marginBottom: section.titleStyle?.marginBottom || '1rem',
+                  textAlign: 'left'
                 }}
               >
-                VANtech
-              </a>
-            </p>
+                {section.title}
+              </h3>
+              <ul className="space-y-2 text-left">
+                {section.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <a
+                      href={link.url}
+                      className="hover:text-[#0E38B1] transition-colors duration-200 text-white/80"
+                      style={{
+                        fontSize: getResponsiveValue(section.linkStyle?.fontSize, 'md'),
+                        letterSpacing: section.linkStyle?.letterSpacing || '0.02em',
+                        display: 'block',
+                        textAlign: 'left'
+                      }}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+          </div>
+          <div className="flex items-center justify-center md:justify-end mt-4 md:mt-0 w-full md:w-1/4">
+            <img 
+              src={logo} 
+              alt="Logo" 
+              className="h-24 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-200"
+            />
+          </div>
+        </div>
+      </div>
+      </div>
+      {/* Legal Links and Copyright */}
+      <div className="bg-white border-t border-gray-100 py-3 relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Legal Links */}
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 md:gap-6">
+              <a href="/terms" className="text-sm text-gray-600 hover:text-[#0E38B1] transition-colors whitespace-nowrap">Terms of Service</a>
+              <a href="/privacy" className="text-sm text-gray-600 hover:text-[#0E38B1] transition-colors whitespace-nowrap">Privacy Policy</a>
+              <a href="/cookies" className="text-sm text-gray-600 hover:text-[#0E38B1] transition-colors whitespace-nowrap">Cookie Preferences</a>
+              <p 
+                className="text-sm text-gray-600 whitespace-nowrap"
+                style={{
+                  fontWeight: footerData.copyright.fontWeight,
+                  letterSpacing: footerData.copyright.letterSpacing,
+                  fontFamily: "Montserrat",
+                }}
+              >
+                {footerData.copyright.text}
+              </p>
+            </div>
+            
+            {/* CLAIMSURE text - hidden on mobile, visible on desktop */}
+            <div className="hidden md:block">
+              <span className="text-8xl lg:text-9xl font-bold tracking-tight text-[#0E38B1]/50 select-none whitespace-nowrap">
+                CLAIMSURE
+              </span>
+            </div>
           </div>
         </div>
       </div>
