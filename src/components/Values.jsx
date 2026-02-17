@@ -44,8 +44,7 @@ const features = [
         <img 
           src={shieldEnergyIcon} 
           alt="Integrity" 
-          className="w-8 h-8 filter-[#0e38b1]"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),
@@ -59,8 +58,7 @@ const features = [
         <img 
           src={balanceScaleIcon} 
           alt="Professionalism" 
-          className="w-8 h-8"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),
@@ -74,8 +72,7 @@ const features = [
         <img 
           src={crownIcon} 
           alt="Accuracy" 
-          className="w-8 h-8"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),
@@ -89,8 +86,7 @@ const features = [
         <img 
           src={userGroupIcon} 
           alt="Client Commitment" 
-          className="w-8 h-8"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),
@@ -104,8 +100,7 @@ const features = [
         <img 
           src={checkmarkBadgeIcon} 
           alt="Confidentiality" 
-          className="w-8 h-8"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),

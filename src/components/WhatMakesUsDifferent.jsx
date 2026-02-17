@@ -55,8 +55,7 @@ const features = [
         <img 
           src={shieldEnergyIcon} 
           alt="Specialized Focus" 
-          className="w-8 h-8"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),
@@ -71,8 +70,7 @@ const features = [
         <img 
           src={balanceScaleIcon} 
           alt="Expert Knowledge" 
-          className="w-8 h-8"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),
@@ -87,8 +85,7 @@ const features = [
         <img 
           src={crownIcon} 
           alt="Professional & Ethical" 
-          className="w-8 h-8"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),
@@ -103,8 +100,7 @@ const features = [
         <img 
           src={userGroupIcon} 
           alt="Client-First Approach" 
-          className="w-8 h-8"
-          style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(50%) saturate(3000%) hue-rotate(220deg) brightness(90%) contrast(90%)' }}
+          className="w-8 h-8 text-gray-400"
         />
       </div>
     ),
