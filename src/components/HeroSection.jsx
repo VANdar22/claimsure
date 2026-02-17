@@ -154,15 +154,20 @@ const HeroSection = () => {
             ease: [0.19, 1.0, 0.22, 1.0],
           }}
         >
-          <button 
-            className="px-6 py-4 sm:px-5 sm:py-3 bg-white text-[#0E38B1] border-2 border-[#0E38B1] rounded-xl font-medium hover:bg-[#0E38B1] hover:text-white transition-all duration-500 text-3xl sm:text-3xl transform hover:scale-105"
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: '0 4px 20px rgba(14, 56, 177, 0.2)'
-            }}
-          >
-            🡥
-          </button>
+          <div className="relative">
+            <button 
+              className="px-6 py-4 sm:px-5 sm:py-3 bg-white text-[#0E38B1] border-2 border-[#0E38B1] rounded-xl font-medium hover:bg-[#0E38B1] hover:text-white transition-all duration-500 text-3xl sm:text-3xl transform hover:scale-105 flex items-center justify-center w-16 h-16 sm:w-14 sm:h-14"
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: '0 4px 20px rgba(14, 56, 177, 0.2)'
+              }}
+              aria-label="Scroll to top"
+            >
+              <span className="font-sans" style={{ fontFeatureSettings: '"ss01"' }}>🡥</span>
+              {/* Fallback text for screen readers */}
+              <span className="sr-only">Scroll to top</span>
+            </button>
+          </div>
         </motion.div>
       </div>
     </div>
