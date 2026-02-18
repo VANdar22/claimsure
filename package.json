@@ -8,8 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "sitemap": "node scripts/generate-sitemap.mjs",
-    "prebuild": "npm run sitemap"
+    "sitemap": "node scripts/generate-sitemap.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-sesv2": "^3.992.0",
