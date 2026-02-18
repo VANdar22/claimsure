@@ -5,8 +5,12 @@ import AnimatedText from '../components/AnimatedText';
 import InsightCard from '../components/InsightCard';
 import BookingButton from '../components/BookingButton';
 import SkeletonImage from '../components/SkeletonImage';
+import Footer from '../components/Footer';
 import followup from '../assets/followup.png';
 import advisory from '../assets/advisory.png';
+import negotiation from '../assets/negotiation.png';
+import riskadvisory from '../assets/riskadvisory.png';
+import documentation from '../assets/documentation.png';
 
 // Animation variants
 const staggerContainer = {
@@ -55,7 +59,7 @@ const capabilities = [
       'Professional survey and claim assessment coordination'
     ],
     cta: 'Learn more',
-    image: '/assets/images/claims-documentation.png',
+    image: documentation,
   },
   {
     id: 'claims-submission',
@@ -81,7 +85,7 @@ const capabilities = [
       'Professional representation and settlement recommendations'
     ],
     cta: 'Learn more',
-    image: '/assets/images/claims-negotiation.png',
+    image: negotiation,
   },
   {
     id: 'claims-management',
@@ -94,7 +98,7 @@ const capabilities = [
       'Post-loss advisory and claims improvement strategies'
     ],
     cta: 'Learn more',
-    image: '/assets/images/risk-advisory.png',
+    image: riskadvisory,
   }
 ];
 
@@ -233,11 +237,11 @@ const Services = () => {
                   index % 2 === 0 ? 'lg:ml-auto' : 'lg:mr-auto'
                 }`}
               >
-                <div className="w-full h-48 sm:h-56 md:h-64 lg:h-80 rounded-lg overflow-hidden">
+                <div className="w-full h-48 sm:h-56 md:h-64 lg:h-80 overflow-hidden">
                   <SkeletonImage
                     src={capability.image}
                     alt={capability.title}
-                    className="w-full h-full rounded-lg"
+                    className="w-full h-full transition-transform duration-500 ease-in-out hover:scale-105"
                   />
                 </div>
               </div>
@@ -245,24 +249,8 @@ const Services = () => {
           ))}
         </div>
       </section>
-
-      {/* Insights Section */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 space-y-8 sm:space-y-10 bg-white">
-        <div className="w-full">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#7f1734] mb-4 max-w-3xl">
-            Thinking that travels from lab to boardroom.
-          </h2>
-          <p className="text-sm sm:text-base text-gray-600 leading-relaxed opacity-90 max-w-3xl">
-            Explore our latest insights and thought leadership in the industry.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto relative z-10">
-          {insights.slice(0, 2).map((item, index) => (
-            <InsightCard key={index} item={item} index={index} />
-          ))}
-        </div>
-      </section>
+      
+      <Footer />
     </div>
   );
 };

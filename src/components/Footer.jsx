@@ -24,7 +24,7 @@ const Footer = () => {
         title: "HELPFUL LINKS",
         links: [
           { label: "Home", url: "/" },
-          { label: "Services", url: "/#services" },
+          { label: "Services", url: "/services" },
           { label: "About Us", url: "/about" },
           { label: "Contact", url: "/contact" }
           ,
@@ -49,10 +49,9 @@ const Footer = () => {
       {
         title: "CONTACT",
         links: [
-          { label: "Email: info@claimsure.com", url: "mailto:info@claimsure.com" },
-          { label: "Phone: (555) 123-4567", url: "tel:5551234567" },
-          { label: "Address: 123 Claims St, City", url: "#" },
-          { label: "Twitter: @claimsure", url: "https://twitter.com/claimsure" },
+          { label: "Email: info@claimsureconsult.com", url: "mailto:info@claimsureconsult.com" },
+          { label: "Phone: (233) 544928764", url: "tel:+233 544 928 764" },
+          { label: "Address: Kumasi, Ghana", url: "#" },
           { label: "LinkedIn: @claimsure", url: "https://linkedin.com/claimsure" },
 
 

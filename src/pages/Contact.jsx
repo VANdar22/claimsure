@@ -133,9 +133,8 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-normal text-gray-900">School Address</h3>
-                    <p className="text-gray-600">Obuasi Complex JHS</p>
-                    <p className="text-gray-600">Obuasi, Ashanti Region</p>
+                    <h3 className="font-normal text-gray-900">Service Address</h3>
+                    <p className="text-gray-600">Kumasi, Ashanti Region</p>
                     <p className="text-gray-600">Ghana</p>
                   </div>
                 </div>
@@ -148,7 +147,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-normal text-gray-900">Phone Number</h3>
-                    <p className="text-gray-600">+233 00 000 0000</p>
+                    <p className="text-gray-600">+233 544 928 764</p>
                   </div>
                 </div>
 
@@ -160,8 +159,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-normal text-gray-900">Email Address</h3>
-                    <a href="mailto:info@obuasi.com" className="text-[#7f1734] hover:underline">
-                      info@obuasi.com
+                    <a href="mailto:info@claimsureconsult.com" className="text-[#7f1734] hover:underline">
+                      info@claimsureconsult.com
                     </a>
                   </div>
                 </div>
@@ -174,8 +173,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-normal text-gray-900">Office Hours</h3>
-                    <p className="text-gray-600">Monday – Friday: 8:00 AM – 4:00 PM</p>
-                  </div>
+                    <p className="text-gray-600">Monday – Friday: 9:00 AM – 6:00 PM</p>
+                    </div>
                 </div>
               </div>
             </div>

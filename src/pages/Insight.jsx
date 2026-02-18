@@ -72,19 +72,8 @@ const Insight = () => {
 
       {/* Insights Grid Section */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 bg-white">
-        <div className="w-full mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#7f1734] mb-4 max-w-3xl">
-            Thinking that travels from lab to boardroom.
-          </h2>
-          <p className="text-sm sm:text-base text-gray-600 leading-relaxed opacity-90 max-w-3xl">
-            Explore our latest insights and thought leadership in the industry.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto relative z-10">
-          {insights.map((item, index) => (
-            <InsightCard key={item.title} item={item} index={index} />
-          ))}
+        <div className="w-full py-12 text-center">
+          <p className="text-[#7f1734] text-3xl">No insight available...</p>
         </div>
       </section>
       

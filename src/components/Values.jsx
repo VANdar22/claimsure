@@ -8,11 +8,11 @@ import balanceScaleIcon from "../assets/balance-scale-stroke-rounded.png";
 import crownIcon from "../assets/crown-03-stroke-rounded.png";
 import userGroupIcon from "../assets/user-group-stroke-rounded.png";
 import checkmarkBadgeIcon from "../assets/checkmark-badge-03-stroke-rounded.png";
-import image1 from "../assets/1.png";
-import image2 from "../assets/2.png";
-import image3 from "../assets/3.png";
-import image4 from "../assets/4.png";
-import image5 from "../assets/5.png";
+import image1 from "../assets/integrity.png";
+import image2 from "../assets/professional.png";
+import image3 from "../assets/accuracy.png";
+import image4 from "../assets/confidentiality.png";
+import image5 from "../assets/client.png";
 
 // Animation variants
 const container = {

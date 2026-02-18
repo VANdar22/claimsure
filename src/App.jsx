@@ -5,7 +5,6 @@ import CardNav from './components/CardNav';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Gallery from './pages/Gallery';
 import WhatMakesUsDifferent from './components/WhatMakesUsDifferent';
 import Logo from './assets/logoblue2.png';
 import Values from './components/Values';
@@ -92,16 +91,7 @@ const AnimatedRoutes = () => {
                   <Contact />
                 </motion.div>
               } />
-              <Route path="/gallery" element={
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Gallery />
-                </motion.div>
-              } />
+             
               <Route path="/WhatMakesUsDifferent" element={
                 <motion.div
                   initial={{ opacity: 0 }}

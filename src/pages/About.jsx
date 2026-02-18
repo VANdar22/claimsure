@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import schoolImage from '../assets/school.png';
+import aboutpic from '../assets/aboutpic.png';
+import teampic from '../assets/aboutpic2.png';
 import Footer from '../components/Footer';
 import WhatMakesUsDifferent from '../components/WhatMakesUsDifferent';
 
@@ -16,7 +17,7 @@ const About = () => {
         {/* Image Container */}
         <div className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] relative overflow-hidden">
           <img 
-            src={schoolImage} 
+            src={aboutpic} 
             alt="About Us" 
             className="w-full h-full object-cover object-center"
           />
@@ -82,30 +83,7 @@ const About = () => {
                     <p className="text-white">Claims Director</p>
                   </div>
                 </div>
-
-                {/* Team Member 3 */}
-                <div className="relative h-96 w-full max-w-sm overflow-hidden group">
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500">Team Member 3</span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#7f1734]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
-                    <h3 className="text-xl font-semibold text-white">David Johnson</h3>
-                    <p className="text-white">Client Relations</p>
-                  </div>
-                </div>
-
-                {/* Team Member 4 */}
-                <div className="relative h-96 w-full max-w-sm overflow-hidden group">
-                  <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500">Team Member 4</span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#7f1734]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
-                    <h3 className="text-xl font-semibold text-white">Sarah Williams</h3>
-                    <p className="text-white">Claims Specialist</p>
-                  </div>
-                </div>
               </div>
-              
               {/* Quote Section */}
               <div className="mt-20 text-center">
                 <blockquote className="text-2xl sm:text-3xl font-light text-gray-800 max-w-4xl mx-auto">
@@ -120,7 +98,7 @@ const About = () => {
               <div className="mt-12 w-full">
                 <div className="w-full h-40 md:h-72 overflow-hidden">
                   <img 
-                    src={schoolImage} 
+                    src={teampic} 
                     alt="Our Team at Work" 
                     className="w-full h-full object-cover object-center"
                   />

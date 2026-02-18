@@ -1,16 +1,21 @@
 import { useState, useEffect } from 'react';
-import serviceImage from '../assets/1.png';
+import SkeletonImage from './SkeletonImage';
+import advisory from '../assets/advisory.png';
+import documentation from '../assets/documentation.png';
+import followup from '../assets/followup.png';
+import negotiation from '../assets/negotiation.png';
+import riskadvisory from '../assets/riskadvisory.png';
 
 const services = [
   {
     title: 'Insurance Claims Advisory',
-    
     description: 'Expert guidance on policy interpretation, claims procedures, coverage, exclusions, and entitlements to help you navigate the claims process with confidence.',
     items: [
       'Policy interpretation and claims advisory',
       'Guidance on claims procedures and requirements',
       'Advisory on coverage, exclusions, and claim entitlements'
-    ]
+    ],
+    image: advisory
   },
   {
     title: 'Claims Documentation & Preparation',
@@ -20,7 +25,8 @@ const services = [
       'Loss documentation coordination',
       'Evidence compilation and verification',
       'Survey'
-    ]
+    ],
+    image: documentation
   },
   {
     title: 'Claims Submission & Follow-Up',
@@ -29,7 +35,8 @@ const services = [
       'Submission of claims to insurers',
       'Continuous follow-up and progress monitoring',
       'Liaison between policyholders and insurers'
-    ]
+    ],
+    image: followup
   },
   {
     title: 'Claims Negotiation & Settlement Support',
@@ -38,7 +45,8 @@ const services = [
       'Advisory support during claims negotiation',
       'Review of insurer assessments and settlement offers',
       'Professional representation and settlement recommendations'
-    ]
+    ],
+    image: negotiation
   },
   {
     title: 'Claims Management & Risk Advisory',
@@ -47,7 +55,8 @@ const services = [
       'Claims management support for businesses',
       'Loss prevention and claims risk advisory',
       'Post-loss advisory and claims improvement recommendations'
-    ]
+    ],
+    image: riskadvisory
   }
 ];
 
@@ -93,13 +102,18 @@ const ServicesAccordion = () => {
                   <p className="text-gray-600 text-lg md:text-lg">{service.description}</p>
                 </div>
                 <div className="w-full h-48 md:h-auto md:w-5/12 relative">
-                  <img 
-                    src={serviceImage}
+                  {service.image ? (
+                  <SkeletonImage 
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover"
-                    loading="lazy"
                     decoding="async"
                   />
+                ) : (
+                  <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                    <span className="text-gray-400">No image available</span>
+                  </div>
+                )}
                 </div>
               </div>
             )}
