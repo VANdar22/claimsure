@@ -11,7 +11,7 @@ import checkmarkBadgeIcon from "../assets/checkmark-badge-03-stroke-rounded.png"
 import image1 from "../assets/integrity.png";
 import image2 from "../assets/professional.png";
 import image3 from "../assets/accuracy.png";
-import image4 from "../assets/confidentiality.png";
+import image4 from "../assets/Confidentiality.png";
 import image5 from "../assets/client.png";
 
 // Animation variants
