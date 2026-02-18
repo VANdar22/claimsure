@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import image from '@/assets/carcrash.png';
 // Using a placeholder image from a free image service
-const aboutImage = 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80';
+const aboutImage = image;
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -64,7 +65,7 @@ const AboutSection = () => {
             variants={containerVariants}
           >
             <motion.h2 
-              className="text-3xl md:text-4xl font-light text-[#0e38b1] mb-6"
+              className="text-3xl md:text-4xl font-light text-[#7f1734] mb-6"
               variants={itemVariants}
             >
               Take control of your insurance claims with confidence and expert support you can trust.

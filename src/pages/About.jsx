@@ -34,7 +34,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-['Montserrat']"
           >
-            <h1 className="font-['Montserrat'] font-light bg-[#0E38B1] bg-clip-text text-transparent text-left w-full mb-8">
+            <h1 className="font-['Montserrat'] font-light bg-[#7f1734] bg-clip-text text-transparent text-left w-full mb-8">
               <div className="text-2xl sm:text-3xl md:text-4xl font-light">
                 About Us
               </div>
@@ -56,7 +56,7 @@ const About = () => {
 
             {/* Meet the Team Section */}
             <div className="mt-20">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#0E38B1] mb-2">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[#7f1734] mb-2">
                 Meet the Team
               </h2>
               
@@ -66,7 +66,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
                     <span className="text-gray-500">Team Member 1</span>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#0E38B1]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#7f1734]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
                     <h3 className="text-xl font-semibold text-white">John Doe</h3>
                     <p className="text-white">Founder & CEO</p>
                   </div>
@@ -77,7 +77,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
                     <span className="text-white">Team Member 2</span>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#0E38B1]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#7f1734]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
                     <h3 className="text-xl font-semibold text-white">Jane Smith</h3>
                     <p className="text-white">Claims Director</p>
                   </div>
@@ -88,7 +88,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
                     <span className="text-gray-500">Team Member 3</span>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#0E38B1]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#7f1734]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
                     <h3 className="text-xl font-semibold text-white">David Johnson</h3>
                     <p className="text-white">Client Relations</p>
                   </div>
@@ -99,7 +99,7 @@ const About = () => {
                   <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
                     <span className="text-gray-500">Team Member 4</span>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#0E38B1]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#7f1734]/80 backdrop-blur-sm p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white">
                     <h3 className="text-xl font-semibold text-white">Sarah Williams</h3>
                     <p className="text-white">Claims Specialist</p>
                   </div>

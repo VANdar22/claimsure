@@ -15,6 +15,7 @@ const Home = () => {
         <HeroSection />
         <AboutSection />
         <div className="bg-white py-16">
+          
           <ServicesAccordion />
         </div>
       </main>

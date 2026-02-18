@@ -77,7 +77,25 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-
+      fontSize: {
+        'display-2xl': ['4.5rem', { lineHeight: '1', letterSpacing: '-0.02em' }],
+        'display-xl': ['3.75rem', { lineHeight: '1', letterSpacing: '-0.02em' }],
+        'display-lg': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'display-md': ['2.25rem', { lineHeight: '1.15', letterSpacing: '-0.01em' }],
+        'display-sm': ['1.875rem', { lineHeight: '1.2' }],
+        'display-xs': ['1.5rem', { lineHeight: '1.25' }],
+        'xl': ['1.25rem', { lineHeight: '1.4' }],
+        'lg': ['1.125rem', { lineHeight: '1.5' }],
+        'base': ['1rem', { lineHeight: '1.6' }],
+        'sm': ['0.875rem', { lineHeight: '1.6' }],
+        'xs': ['0.75rem', { lineHeight: '1.6' }],
+      },
+      lineHeight: {
+        'tight': '1.2',
+        'normal': '1.5',
+        'relaxed': '1.6',
+        'loose': '1.8',
+      },
     },
   },
   plugins: [

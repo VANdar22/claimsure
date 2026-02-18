@@ -1,13 +1,13 @@
 // Primary colors
-export const PRIMARY = '#2c666e';
-export const ACCENT = '#0E38B1'; // Primary blue color
-export const PRIMARY_DARK = '#1d4ed8';
-export const PRIMARY_LIGHT = '#3b82f6';
+export const PRIMARY = '#7f1734';
+export const ACCENT = '#7f1734'; // Primary maroon color
+export const PRIMARY_DARK = '#5e0f25';
+export const PRIMARY_LIGHT = '#a01f43';
 
 // Secondary colors
-export const SECONDARY = '#7c3aed';
-export const SECONDARY_DARK = '#6d28d9';
-export const SECONDARY_LIGHT = '#8b5cf6';
+export const SECONDARY = '#a01f43';
+export const SECONDARY_DARK = '#7f1734';
+export const SECONDARY_LIGHT = '#c12753';
 
 // Background colors
 export const BACKGROUND = '#ffffff';

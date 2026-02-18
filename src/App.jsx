@@ -27,7 +27,7 @@ const ScrollToTop = () => {
 const items = [
     {
       label: "About",
-      bgColor: "rgba(14, 56, 177, 0.9)",
+      bgColor: "rgba(127, 23, 52, 0.9)",
       textColor: "#FFFFFF",
       links: [
         { label: "Company Overview", ariaLabel: "About Company", to: "/about" },
@@ -37,7 +37,7 @@ const items = [
     },
     {
       label: "Services", 
-      bgColor: "rgba(14, 56, 177, 0.9)",
+      bgColor: "rgba(127, 23, 52, 0.9)",
       textColor: "#FFFFFF",
       links: [
         { label: "Solutions", ariaLabel: "Our services", to: "/services" },
@@ -46,11 +46,10 @@ const items = [
     },
     {
       label: "Contact",
-      bgColor: "rgba(14, 56, 177, 0.9)", 
+      bgColor: "rgba(127, 23, 52, 0.9)", 
       textColor: "#FFFFFF",
       links: [
         { label: "Email", ariaLabel: "Email us" },
-        { label: "Twitter", ariaLabel: "Twitter" },
         { label: "LinkedIn", ariaLabel: "LinkedIn" }
       ]
     }
@@ -168,8 +167,8 @@ function App() {
           <CardNav 
             items={items}
             baseColor="rgba(255, 255, 255, 0.8)"
-            menuColor="rgba(14, 56, 177, 0.8)"
-            buttonBgColor="rgba(14, 56, 177, 0.8)"
+            menuColor="rgba(127, 23, 52, 0.8)"
+            buttonBgColor="rgba(127, 23, 52, 0.8)"
             buttonTextColor="#fff"
             ease="power3.out"
             theme="color"

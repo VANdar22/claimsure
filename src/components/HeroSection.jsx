@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import heroImage from "../assets/home.png";
+import heroImage from "../assets/home.webp";
 
 const MaskedImage = () => (
   <motion.div 
@@ -12,7 +12,7 @@ const MaskedImage = () => (
       transition: {
         duration: 1.2,
         delay: 0.8,
-        ease: [0.19, 1.0, 0.22, 1.0]
+        ease: [0.19, 1, 0.22, 1]
       }
     }}
   >
@@ -46,14 +46,14 @@ const MaskedImage = () => (
               transition: {
                 duration: 1.5,
                 delay: 0.8,
-                ease: [0.25, 0.1, 0.25, 1.0]
+                ease: [0.25, 0.1, 0.25, 1]
               }
             }}
             whileHover={{ 
               scale: 1.05,
               transition: { 
                 duration: 0.4,
-                ease: [0.25, 0.1, 0.25, 1.0]
+                ease: [0.25, 0.1, 0.25, 1]
               } 
             }}
           />
@@ -66,7 +66,7 @@ const MaskedImage = () => (
 const HeroSection = () => {
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-start pt-16 sm:pt-20 md:pt-24 lg:justify-center px-4 sm:px-6">
-      <div className="w-full max-w-7xl flex flex-col items-center">
+      <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
         <div className="w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12 py-6 sm:py-8 lg:py-12">
           {/* Text Content - Left Side */}
           <motion.div
@@ -78,20 +78,20 @@ const HeroSection = () => {
               delay: 0.1
             }}
             className="w-full lg:w-2/5 text-left mt-24 lg:mt-0"
-            style={{ color: "blue" }}
+            style={{ color: "#7f1734" }}
           >
-            <motion.h1 className="font-['Montserrat'] font-light bg-[#0E38B1] bg-clip-text text-transparent">
+            <motion.h1 className="font-['Montserrat'] font-light bg-[#7f1734] bg-clip-text text-transparent">
               <div className="flex flex-col items-start gap-2 sm:gap-3">
                 <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight">
                   {['Consulting', 'and advisory', 'services'].map((line, index) => (
                     <motion.div
-                      key={index}
+                      key={`hero-line-${line.toLowerCase().replaceAll(/\s+/g, '-')}`}
                       initial={{ y: 40, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{
                         duration: 1.4,
                         delay: 0.3 + (index * 0.15),
-                        ease: [0.19, 1.0, 0.22, 1.0],
+                        ease: [0.19, 1, 0.22, 1],
                       }}
                       className="overflow-hidden"
                     >
@@ -103,18 +103,18 @@ const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 1.2,
+                    duration: 1.2, 
                     delay: 1.6,
-                    ease: [0.19, 1.0, 0.22, 1.0],
+                    ease: [0.19, 1, 0.22, 1],
                   }}
                 >
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600 mt-2 sm:mt-3 max-w-2xl leading-relaxed">
+                  <p className="text-lg sm:text-md md:text-lg text-gray-600 mt-2 sm:mt-3 max-w-2xl leading-relaxed">
                     ClaimSure Consult & Advisory Services is a Kumasi-based firm
                     dedicated to helping individuals and businesses successfully
                     navigate insurance claims.
                   </p>
                   <motion.p
-                    className="text-sm sm:text-base md:text-lg text-gray-600 mt-4 sm:mt-3 max-w-2xl leading-relaxed"
+                    className="text-lg sm:text-base md:text-lg text-gray-600 mt-4 sm:mt-3 max-w-2xl leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -151,24 +151,22 @@ const HeroSection = () => {
           transition={{
             duration: 1,
             delay: 2.2,
-            ease: [0.19, 1.0, 0.22, 1.0],
+            ease: [0.19, 1, 0.22, 1],
           }}
         >
           <div className="relative">
-            <button 
-              className="px-6 py-4 sm:px-5 sm:py-3 bg-white text-[#0E38B1] border-2 border-[#0E38B1] rounded-xl font-medium hover:bg-[#0E38B1] hover:text-white transition-all duration-500 text-3xl sm:text-3xl transform hover:scale-105 flex items-center justify-center w-16 h-16 sm:w-14 sm:h-14"
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: '0 4px 20px rgba(14, 56, 177, 0.2)'
-              }}
-              aria-label="Scroll to top"
+            <a 
+              href="/contact"
+              className="px-6 py-4 sm:px-5 sm:py-3 bg-white text-[#7f1734] border-2 border-[#7f1734] rounded-xl font-medium hover:bg-[#7f1734] hover:text-white transition-all duration-500 text-3xl sm:text-3xl transform hover:scale-105 flex items-center justify-center w-16 h-16 sm:w-14 sm:h-14 hover:shadow-[0_4px_20px_rgba(127,23,52,0.2)]"
+              aria-label="Contact Us"
             >
               <span className="font-sans" style={{ fontFeatureSettings: '"ss01"' }}>🡥</span>
-              {/* Fallback text for screen readers */}
-              <span className="sr-only">Scroll to top</span>
-            </button>
+              <span className="sr-only">Contact Us</span>
+            </a>
           </div>
         </motion.div>
+
+        {/* Footer */}
       </div>
     </div>
   );

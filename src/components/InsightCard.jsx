@@ -47,12 +47,12 @@ const InsightCard = ({ item, index }) => {
       </div>
       
       {/* Description - Slides up on hover */}
-      <div className="absolute bottom-0 left-0 right-0 bg-[#0E38B1]/90 p-4 sm:p-5 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 h-1/2 flex flex-col">
+      <div className="absolute bottom-0 left-0 right-0 bg-[#7f1734]/90 p-4 sm:p-5 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 h-1/2 flex flex-col">
         <h3 className="text-white text-lg font-medium mb-2">{item.title}</h3>
         <p className="text-white/90 text-sm mb-4 flex-grow">{item.excerpt}</p>
         <div className="mt-4">
           <motion.button 
-            className="text-white text-sm font-medium flex items-center gap-1"
+            className="flex items-center text-sm font-medium text-[#7f1734]"
             whileHover={{ 
               x: 2,
               transition: { duration: 0.2 }
@@ -61,7 +61,7 @@ const InsightCard = ({ item, index }) => {
           >
             Read more
             <div className="ml-2">
-              <span className="text-3xl">🡥</span>
+              <span className="text-[#7f1734]">•</span>
             </div>
           </motion.button>
         </div>

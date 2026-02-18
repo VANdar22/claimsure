@@ -136,7 +136,7 @@ const WhatMakesUsDifferent = () => {
             viewport={{ once: true, margin: "-100px" }}
             className="relative z-10 mb-16 max-w-4xl mx-auto"
           >
-            <motion.h1 variants={item} className="font-['Montserrat'] font-light bg-[#0E38B1] bg-clip-text text-transparent text-left w-full mb-4">
+            <motion.h1 variants={item} className="font-['Montserrat'] font-light bg-[#7f1734] bg-clip-text text-transparent text-left w-full mb-4">
               <div className="text-2xl sm:text-3xl md:text-4xl font-light">
                 What Makes Us Different
               </div>
@@ -169,14 +169,14 @@ const WhatMakesUsDifferent = () => {
                   
                   {/* White bottom bar with icon and title - Disappears on hover */}
                   <div className="absolute bottom-0 left-0 right-0 bg-white/90 p-4 flex items-center gap-3 transition-opacity duration-300 group-hover:opacity-0">
-                    <Icon size={18} className="text-[#0E38B1]" />
+                    <Icon size={18} className="text-[#7f1734]" />
                     <h3 className="font-['Montserrat'] text-lg font-medium text-gray-900">
                       {item.title}
                     </h3>
                   </div>
                   
                   {/* Description - Slides up on hover with fixed height */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-[#0E38B1]/90 p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white h-1/2">
+                  <div className="absolute bottom-0 left-0 right-0 bg-[#7f1734]/90 p-6 transform translate-y-full group-hover:translate-y-0 transition-all duration-300 text-white h-1/2">
                     <p className="font-['Montserrat'] text-white/90 text-lg leading-relaxed line-clamp-3 overflow-hidden">
                       {item.description}
                     </p>
@@ -200,7 +200,7 @@ const WhatMakesUsDifferent = () => {
                     Let's work together to get you the settlement you deserve.
                   </p>
                 </div>
-                <button className="flex-shrink-0 px-4 sm:px-5 py-2 sm:py-3 bg-white text-[#0E38B1] border-2 border-[#0E38B1] rounded-xl font-medium hover:bg-[#0E38B1] hover:text-white transition-colors duration-300 text-xl sm:text-2xl">
+                <button className="flex-shrink-0 px-4 sm:px-5 py-2 sm:py-3 bg-white text-[#7f1734] border-2 border-[#7f1734] rounded-xl font-medium hover:bg-[#7f1734] hover:text-white transition-colors duration-300 text-xl sm:text-2xl">
                   🡥
                 </button>
               </div>

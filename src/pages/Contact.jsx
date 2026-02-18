@@ -95,7 +95,7 @@ const Contact = () => {
         >
           <motion.div variants={itemVariants}>
             <AnimatedText 
-              className="text-xs sm:text-sm font-light uppercase tracking-widest mb-4 sm:mb-6 text-[#0E38B1] block"
+              className="text-xs sm:text-sm font-light uppercase tracking-widest mb-4 sm:mb-6 text-[#7f1734] block"
               split={false}
             >
               Get in Touch
@@ -104,7 +104,7 @@ const Contact = () => {
           
           <motion.div variants={itemVariants}>
             <AnimatedText 
-              className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#0E38B1] mb-6 sm:mb-8"
+              className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#7f1734] mb-6 sm:mb-8"
               split={true}
             >
               We're here to help with any questions.
@@ -122,7 +122,7 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <div className="bg-white ">
-              <h2 className="text-xl font-normal text-[#0E38B1] mb-4">Contact Information</h2>
+              <h2 className="text-xl font-normal text-[#7f1734] mb-4">Contact Information</h2>
               
               <div className="space-y-5">
                 <div className="flex items-start">
@@ -160,7 +160,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-normal text-gray-900">Email Address</h3>
-                    <a href="mailto:info@obuasi.com" className="text-[#0E38B1] hover:underline">
+                    <a href="mailto:info@obuasi.com" className="text-[#7f1734] hover:underline">
                       info@obuasi.com
                     </a>
                   </div>
@@ -182,7 +182,7 @@ const Contact = () => {
           </div>
           
           <div className="">
-            <h2 className="text-xl font-normal text-[#0E38B1] mb-5">Contact Form</h2>
+            <h2 className="text-xl font-normal text-[#7f1734] mb-5">Contact Form</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm text-gray-700 mb-1">Name</label>
@@ -192,7 +192,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#0E38B1]"
+                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#7f1734]"
                   required
                 />
               </div>
@@ -206,7 +206,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#0E38B1]"
+                    className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#7f1734]"
                     required
                   />
                 </div>
@@ -219,7 +219,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#0E38B1]"
+                    className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#7f1734]"
                   />
                 </div>
               </div>
@@ -232,7 +232,7 @@ const Contact = () => {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#0E38B1]"
+                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-[#7f1734]"
                   required
                 />
               </div>
@@ -246,7 +246,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#0E38B1] text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 disabled:opacity-50"
+                className="w-full bg-[#7f1734] text-white py-3 px-6 rounded-lg hover:bg-[#5e0f25] transition-colors duration-300 disabled:opacity-50"
                 disabled={!recaptchaToken}
               >
                 Send Message

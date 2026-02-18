@@ -14,11 +14,11 @@ export default function BookingButton({ className = "", label = "Let's talk abou
           theme: 'light',
           cssVarsPerTheme: {
             light: {
-              'cal-brand': '#0E38B1',
-              'cal-brand-emphasis': '#0a2a7a',
-              'cal-brand-hover': '#0a2a7a',
+              'cal-brand': '#7f1734',
+              'cal-brand-emphasis': '#5e0f25',
+              'cal-brand-hover': '#5e0f25',
               'cal-brand-text': '#ffffff',
-              'cal-brand-accent': '#0E38B1',
+              'cal-brand-accent': '#7f1734',
             },
           },
           hideEventTypeDetails: false,
@@ -82,7 +82,7 @@ export default function BookingButton({ className = "", label = "Let's talk abou
                 }
               }
             }'
-            className="flex-shrink-0 ml-3 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white text-[#0E38B1] border-2 border-[#0E38B1] rounded-xl font-medium hover:bg-[#0E38B1] hover:text-white transition-colors duration-300 text-xl sm:text-2xl"
+            className="flex-shrink-0 ml-3 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white text-[#7f1734] border-2 border-[#7f1734] rounded-xl font-medium hover:bg-[#7f1734] hover:text-white transition-colors duration-300 text-xl sm:text-2xl"
             aria-label="Book a consultation"
           >
             🡥

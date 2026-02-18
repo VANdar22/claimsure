@@ -41,7 +41,7 @@ const InsightDetails = () => {
         {/* Back button */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center text-[#0E38B1] hover:text-blue-800 mb-12 transition-colors group"
+          className="flex items-center text-[#7f1734] hover:text-[#5e0f25] mb-12 transition-colors group"
           whileHover={{ x: -4 }}
         >
           <svg 
@@ -64,7 +64,7 @@ const InsightDetails = () => {
         {/* Article Header */}
         <div className="bg-white overflow-hidden mb-12">
           <div className="p-6 sm:p-8 pb-0 sm:pb-0">
-            <h1 className="font-['Montserrat'] font-light text-[#0E38B1] text-left w-full mb-6">
+            <h1 className="font-['Montserrat'] font-light text-[#7f1734] text-left w-full mb-6">
               <div className="text-2xl sm:text-3xl md:text-4xl font-light">
                 {insight.title}
               </div>
@@ -103,7 +103,7 @@ const InsightDetails = () => {
                     return (
                       <HeadingTag 
                         key={`heading-${index}`}
-                        className={`${section.level === 2 ? 'text-2xl' : 'text-xl'} font-light text-[#0E38B1] mt-12 mb-6`}
+                        className={`${section.level === 2 ? 'text-2xl' : 'text-xl'} font-light text-[#7f1734] mt-12 mb-6`}
                       >
                         {section.content}
                       </HeadingTag>
@@ -115,7 +115,7 @@ const InsightDetails = () => {
                           const [title, ...content] = item.split(': ');
                           return (
                             <li key={`item-${i}`} className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                              <span className="text-[#0E38B1]">{title}:</span> {content.join(': ')}
+                              <span className="text-[#7f1734]">{title}:</span> {content.join(': ')}
                             </li>
                           );
                         })}
@@ -126,7 +126,7 @@ const InsightDetails = () => {
                 }
               })}
               
-              <h2 className="text-xl sm:text-2xl font-light text-[#0E38B1] mt-16 mb-6">Real-World Impact</h2>
+              <h2 className="text-xl sm:text-2xl font-light text-[#7f1734] mt-16 mb-6">Real-World Impact</h2>
               
               <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
                 By implementing our solutions, our clients have seen remarkable results, including:
@@ -159,7 +159,7 @@ const InsightDetails = () => {
               </div>
               <button 
                 onClick={() => window.location.href = '/contact'}
-                className="flex-shrink-0 px-4 sm:px-5 py-2 sm:py-3 bg-white text-[#0E38B1] border-2 border-[#0E38B1] rounded-xl font-medium hover:bg-[#0E38B1] hover:text-white transition-colors duration-300 text-xl sm:text-2xl"
+                className="flex-shrink-0 px-4 sm:px-5 py-2 sm:py-3 bg-white text-[#7f1734] border-2 border-[#7f1734] rounded-xl font-medium hover:bg-[#7f1734] hover:text-white transition-colors duration-300 text-xl sm:text-2xl"
               >
                 🡥
               </button>
@@ -171,7 +171,7 @@ const InsightDetails = () => {
         {insights.length > 1 && (
           <div className="mt-20 px-4 sm:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-light text-[#0E38B1] mb-8">More Insights</h2>
+              <h2 className="text-2xl font-light text-[#7f1734] mb-8">More Insights</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {insights
                   .filter(item => item.title !== insight.title)

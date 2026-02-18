@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Puzzle, Workflow, UsersRound, ShieldCheck, Handshake, Target } from 'lucide-react';
 import AnimatedText from '../components/AnimatedText';
 import InsightCard from '../components/InsightCard';
 import BookingButton from '../components/BookingButton';
+import SkeletonImage from '../components/SkeletonImage';
+import followup from '../assets/followup.png';
+import advisory from '../assets/advisory.png';
 
 // Animation variants
 const staggerContainer = {
@@ -20,7 +23,7 @@ const staggerContainer = {
 
 // Accent colors
 const accentColors = {
-  main: '#0E38B1',
+  main: '#7f1734',
   dark: '#0a2a7a',
   light: '#3d5fb8',
 };
@@ -38,7 +41,7 @@ const capabilities = [
       'Coverage, exclusions, and claim entitlement advisory'
     ],
     cta: 'Learn more',
-    image: '/assets/images/insurance-advisory.png',
+    image: advisory,
   },
   {
     id: 'claims-documentation',
@@ -65,7 +68,7 @@ const capabilities = [
       'Liaison between policyholders and insurance providers'
     ],
     cta: 'Learn more',
-    image: '/assets/images/claims-submission.png',
+    image: followup,
   },
   {
     id: 'claims-negotiation',
@@ -134,7 +137,7 @@ const Services = () => {
     listStyleType: 'square',
     paddingLeft: '1.25rem',
     '& li::marker': {
-      color: '#0E38B1',
+      color: '#7f1734',
     },
   };
   return (
@@ -155,7 +158,7 @@ const Services = () => {
               </p>
             </AnimatedText>
             <AnimatedText delay={0.2} split>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight tracking-tight text-[#0E38B1] mb-6 sm:mb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight tracking-tight text-[#7f1734] mb-6 sm:mb-8">
                 Your partner for research-led strategy, design, and delivery.
               </h1>
             </AnimatedText>
@@ -182,7 +185,7 @@ const Services = () => {
       {/* Capabilities Section */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 space-y-8 sm:space-y-10 bg-white">
         <div className="w-full">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#0E38B1] mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#7f1734] mb-4">
             Simple structure, deep capability.
           </h2>
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed opacity-90 max-w-3xl">
@@ -207,7 +210,7 @@ const Services = () => {
             >
               <div className="space-y-4 sm:space-y-6">
                 <div className="space-y-1 sm:space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-light text-[#0E38B1]">
+                  <h3 className="text-xl sm:text-2xl font-light text-[#7f1734]">
                     {capability.title}
                   </h3>
                 </div>
@@ -230,20 +233,12 @@ const Services = () => {
                   index % 2 === 0 ? 'lg:ml-auto' : 'lg:mr-auto'
                 }`}
               >
-                <div className="h-full w-full bg-gray-200 rounded-lg overflow-hidden">
-                  <img
+                <div className="w-full h-48 sm:h-56 md:h-64 lg:h-80 rounded-lg overflow-hidden">
+                  <SkeletonImage
                     src={capability.image}
                     alt={capability.title}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextElementSibling.style.display = 'flex';
-                    }}
-                    loading="lazy"
+                    className="w-full h-full rounded-lg"
                   />
-                  <div className="h-full w-full hidden items-center justify-center bg-gray-100 text-gray-400 text-sm sm:text-base">
-                    {capability.title} Image
-                  </div>
                 </div>
               </div>
             </motion.article>
@@ -254,7 +249,7 @@ const Services = () => {
       {/* Insights Section */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 space-y-8 sm:space-y-10 bg-white">
         <div className="w-full">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#0E38B1] mb-4 max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#7f1734] mb-4 max-w-3xl">
             Thinking that travels from lab to boardroom.
           </h2>
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed opacity-90 max-w-3xl">

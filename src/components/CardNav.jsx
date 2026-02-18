@@ -197,7 +197,7 @@ const CardNav = ({
               e.preventDefault();
               window.location.href = '/contact';
             }}
-            className="card-nav-cta-button hidden md:inline-flex border border-[#0E38B1] rounded-lg px-3 py-1 items-center h-auto font-medium cursor-pointer transition-colors duration-300 font-['Montserrat'] text-[14px] md:text-[16px] tracking-[-0.5px] text-[#0E38B1] bg-white hover:bg-[#0E38B1] hover:text-white">
+            className="card-nav-cta-button hidden md:inline-flex border border-[#7f1734] rounded-lg px-3 py-1 items-center h-auto font-medium cursor-pointer transition-colors duration-300 font-['Montserrat'] text-[14px] md:text-[16px] tracking-[-0.5px] text-[#7f1734] bg-white hover:bg-[#7f1734] hover:text-white">
             Get Started
           </a>
         </div>

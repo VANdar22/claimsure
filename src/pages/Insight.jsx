@@ -32,12 +32,12 @@ const Insight = () => {
           {/* Left Column */}
           <div className="lg:w-1/2">
             <AnimatedText>
-              <p className="text-xs sm:text-sm font-light uppercase tracking-widest mb-4 sm:mb-6 text-[#0E38B1]">
+              <p className="text-xs sm:text-sm font-light uppercase tracking-widest mb-4 sm:mb-6 text-[#7f1734]">
                 insights
               </p>
             </AnimatedText>
             <AnimatedText delay={0.2} split>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight tracking-tight text-[#0E38B1] mb-8">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light leading-tight tracking-tight text-[#7f1734] mb-8">
                 Discover our <br />latest insights, updates, and expert analysis
               </h1>
             </AnimatedText>
@@ -73,7 +73,7 @@ const Insight = () => {
       {/* Insights Grid Section */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-16 bg-white">
         <div className="w-full mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#0E38B1] mb-4 max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-tight tracking-tight text-[#7f1734] mb-4 max-w-3xl">
             Thinking that travels from lab to boardroom.
           </h2>
           <p className="text-sm sm:text-base text-gray-600 leading-relaxed opacity-90 max-w-3xl">

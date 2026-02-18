@@ -1,5 +1,4 @@
 import React from "react";
-import { ACCENT } from "@/constants/colors";
 import logo from "@/assets/logo.png";
 import footerBg from "@/assets/footerbg.png";
 
@@ -8,7 +7,7 @@ const Footer = () => {
     branding: {
       text: "Claim Sure helps clients manage insurance claims easily and achieve fair, timely settlements. We use expert knowledge and structured guidance to support individuals and businesses throughout the entire claims process.",
       fontFamily: "'Montserrat', sans-serif",
-      fontWeight: 500,
+      fontWeight: 400,
       fontSize: {
         base: "1rem",
         md: "1.2rem",
@@ -35,7 +34,7 @@ const Footer = () => {
             base: "1rem",
             md: "1.1rem"
           },
-          fontWeight: 600,
+          fontWeight: 400,
           letterSpacing: "0.02em",
           marginBottom: "1rem"
         },
@@ -63,7 +62,7 @@ const Footer = () => {
             base: "1rem",
             md: "1.1rem"
           },
-          fontWeight: 600,
+          fontWeight: 400,
           letterSpacing: "0.02em",
           marginBottom: "1rem"
         },
@@ -106,7 +105,7 @@ const Footer = () => {
       fontWeight: 300,
       letterSpacing: "0.06em",
       fontFamily: "'Montserrat Alternates', sans-serif",
-      color: ACCENT,
+      color: '#7f1734',
     },
   };
 
@@ -156,8 +155,8 @@ const Footer = () => {
         {/* Sections */}
         <div className="flex flex-col md:flex-row -mx-1 md:-mx-2 mb-6 gap-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-3/4">
-            {footerData.sections.map((section, index) => (
-              <div key={index} className="text-center md:text-left px-1 md:px-2">
+            {footerData.sections.map((section, sectionIndex) => (
+              <div key={`section-${section.title.toLowerCase().replace(/\s+/g, '-')}-${sectionIndex}`} className="text-center md:text-left px-1 md:px-2">
               <h3 
                 className="text-white"
                 style={{
@@ -171,11 +170,11 @@ const Footer = () => {
                 {section.title}
               </h3>
               <ul className="space-y-2 text-left">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
+                {section.links.map((link) => (
+                  <li key={`${section.title.toLowerCase().replace(/\s+/g, '-')}-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
                     <a
                       href={link.url}
-                      className="hover:text-[#0E38B1] transition-colors duration-200 text-white/80"
+                      className="hover:text-[#7f1734] transition-colors duration-200 text-white/80"
                       style={{
                         fontSize: getResponsiveValue(section.linkStyle?.fontSize, 'md'),
                         letterSpacing: section.linkStyle?.letterSpacing || '0.02em',
@@ -207,9 +206,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 md:gap-6">
-              <a href="/terms" className="text-sm text-gray-600 hover:text-[#0E38B1] transition-colors whitespace-nowrap">Terms of Service</a>
-              <a href="/privacy" className="text-sm text-gray-600 hover:text-[#0E38B1] transition-colors whitespace-nowrap">Privacy Policy</a>
-              <a href="/cookies" className="text-sm text-gray-600 hover:text-[#0E38B1] transition-colors whitespace-nowrap">Cookie Preferences</a>
+              <a href="/terms" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Terms of Service</a>
+              <a href="/privacy" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Privacy Policy</a>
+              <a href="/cookies" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Cookie Preferences</a>
               <p 
                 className="text-sm text-gray-600 whitespace-nowrap"
                 style={{
@@ -224,7 +223,7 @@ const Footer = () => {
             
             {/* CLAIMSURE text - hidden on mobile, visible on desktop */}
             <div className="hidden md:block">
-              <span className="text-8xl lg:text-9xl font-bold tracking-tight text-[#0E38B1]/50 select-none whitespace-nowrap">
+              <span className="text-8xl lg:text-9xl font-bold tracking-tight text-[#7f1734]/50 select-none whitespace-nowrap">
                 CLAIMSURE
               </span>
             </div>
