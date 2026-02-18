@@ -147,7 +147,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-normal text-gray-900">Phone Number</h3>
-                    <p className="text-gray-600">+233 544 928 764</p>
+                    <p className="text-gray-600">+233 544 929 794</p>
                   </div>
                 </div>
 
@@ -174,7 +174,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-normal text-gray-900">Office Hours</h3>
                     <p className="text-gray-600">Monday – Friday: 9:00 AM – 6:00 PM
-                      
+
                     </p>
                     </div>
                 </div>

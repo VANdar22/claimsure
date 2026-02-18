@@ -235,7 +235,8 @@ const Values = () => {
                   </p>
                 </div>
                 <button className="flex-shrink-0 px-4 sm:px-5 py-2 sm:py-3 bg-white text-[#7f1734] border-2 border-[#7f1734] rounded-xl font-medium hover:bg-[#7f1734] hover:text-white transition-colors duration-300 text-xl sm:text-2xl">
-                  🡥
+                  <span className="md:hidden">→</span>
+                  <span className="hidden md:inline">🡥</span>
                 </button>
               </div>
             </div>

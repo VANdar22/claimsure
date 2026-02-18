@@ -160,7 +160,8 @@ const HeroSection = () => {
               className="px-6 py-4 sm:px-5 sm:py-3 bg-white text-[#7f1734] border-2 border-[#7f1734] rounded-xl font-medium hover:bg-[#7f1734] hover:text-white transition-all duration-500 text-3xl sm:text-3xl transform hover:scale-105 flex items-center justify-center w-16 h-16 sm:w-14 sm:h-14 hover:shadow-[0_4px_20px_rgba(127,23,52,0.2)]"
               aria-label="Contact Us"
             >
-              <span className="font-sans" style={{ fontFeatureSettings: '"ss01"' }}>🡥</span>
+              <span className="font-sans md:hidden">→</span>
+              <span className="font-sans hidden md:inline" style={{ fontFeatureSettings: '"ss01"' }}>🡥</span>
               <span className="sr-only">Contact Us</span>
             </a>
           </div>

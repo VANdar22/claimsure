@@ -50,7 +50,7 @@ const Footer = () => {
         title: "CONTACT",
         links: [
           { label: "Email: info@claimsureconsult.com", url: "mailto:info@claimsureconsult.com" },
-          { label: "Phone: (233) 544928764", url: "tel:+233 544 928 764" },
+          { label: "Phone: (233) 544929794", url: "tel:+233 544 929 794" },
           { label: "Address: Kumasi, Ghana", url: "#" },
           { label: "LinkedIn: @claimsure", url: "https://linkedin.com/claimsure" },
 
