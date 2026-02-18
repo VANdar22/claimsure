@@ -156,7 +156,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row -mx-1 md:-mx-2 mb-6 gap-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full md:w-3/4">
             {footerData.sections.map((section, sectionIndex) => (
-              <div key={`section-${section.title.toLowerCase().replace(/\s+/g, '-')}-${sectionIndex}`} className="text-center md:text-left px-1 md:px-2">
+              <div key={`section-${section.title.toLowerCase().replaceAll(/\s+/g, '-')}-${sectionIndex}`} className="text-center md:text-left px-1 md:px-2">
               <h3 
                 className="text-white"
                 style={{
@@ -171,7 +171,7 @@ const Footer = () => {
               </h3>
               <ul className="space-y-2 text-left">
                 {section.links.map((link) => (
-                  <li key={`${section.title.toLowerCase().replace(/\s+/g, '-')}-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <li key={`${section.title.toLowerCase().replaceAll(/\s+/g, '-')}-${link.label.toLowerCase().replaceAll(/\s+/g, '-')}`}>
                     <a
                       href={link.url}
                       className="hover:text-[#7f1734] transition-colors duration-200 text-white/80"
