@@ -17,7 +17,7 @@ const Contact = () => {
   const [recaptchaToken, setRecaptchaToken] = useState('');
   const recaptchaRef = useRef(null);
   
-  const RECAPTCHA_SITE_KEY = '6Lcn024sAAAAAOB34MQ1E-6b161ndDB1rq6LUXGm'; // reCAPTCHA site key
+  const RECAPTCHA_SITE_KEY = '6LfhOHAsAAAAAAvMWbgHAAVHPh1n69qtswpTWWFp'; // reCAPTCHA site key
 
   const handleChange = (e) => {
     const { name, value } = e.target;
