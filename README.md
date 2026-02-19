@@ -1,16 +1,83 @@
-# React + Vite
+# ClaimSure Consult & Advisory Services
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive website for ClaimSure Consult & Advisory Services, built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡ Blazing fast performance with Vite
+- 🎨 Styled with Tailwind CSS
+- 🎭 Smooth animations with Framer Motion
+- 📱 Fully responsive design
+- 🔍 SEO optimized with React Helmet
+- 📄 Legal pages (Privacy Policy, Cookie Policy, Terms of Service)
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18
+- Vite 5
+- Tailwind CSS 3
+- Framer Motion
+- React Router
+- React Icons
+- PostCSS
+- ESLint + Prettier
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js 16+ and npm/yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/your-username/claimsure.git
+   cd claimsure
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Build for production
+   ```bash
+   npm run build
+   # or
+   yarn build
+   ```
+
+## 📂 Project Structure
+
+```
+src/
+├── assets/          # Images, fonts, and other static files
+├── components/      # Reusable UI components
+├── pages/           # Page components
+├── styles/          # Global styles and Tailwind config
+└── App.jsx         # Main application component
+```
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Vite](https://vitejs.dev/) for the amazing build tooling
+
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) for animations
+- [React Icons](https://react-icons.github.io/react-icons/) for the icon set
+- [Vantech Design](https://vantechdesign.com) for design and development
+
