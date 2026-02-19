@@ -11,6 +11,10 @@ import Values from './components/Values';
 import Services from './pages/Services';
 import Insight from './pages/Insight';
 import InsightDetails from './pages/InsightDetails';
+import CookiePolicy from './pages/CookiePolicy';
+import Legal from './pages/Legal';
+import Privacy from './pages/Privacy';
+import CookieConsent from './components/CookieConsent';
 
 // This component will handle scrolling to top on route changes
 const ScrollToTop = () => {
@@ -142,6 +146,36 @@ const AnimatedRoutes = () => {
                   <InsightDetails />
                 </motion.div>
               } />
+              <Route path="/cookie-policy" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <CookiePolicy />
+                </motion.div>
+              } />
+              <Route path="/legal" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Legal />
+                </motion.div>
+              } />
+              <Route path="/privacy" element={
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Privacy />
+                </motion.div>
+              } />
       </Routes>
     </AnimatePresence>
   );
@@ -170,6 +204,7 @@ function App() {
         <main className="flex-1">
           <AnimatedRoutes />
         </main>
+        <CookieConsent />
       </div>
     </Router>
   );

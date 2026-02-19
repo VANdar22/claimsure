@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import footerBg from "@/assets/footerbg.png";
 
@@ -205,9 +206,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             {/* Legal Links */}
             <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 md:gap-6">
-              <a href="/terms" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Terms of Service</a>
-              <a href="/privacy" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Privacy Policy</a>
-              <a href="/cookies" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Cookie Preferences</a>
+              <Link to="/legal" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Terms of Service</Link>
+              <Link to="/privacy" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Privacy Policy</Link>
+              <Link to="/cookie-policy" className="text-sm text-gray-600 hover:text-[#7f1734] transition-colors whitespace-nowrap">Cookie Policy</Link>
               <p 
                 className="text-sm text-gray-600 whitespace-nowrap"
                 style={{

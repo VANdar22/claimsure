@@ -200,8 +200,12 @@ const WhatMakesUsDifferent = () => {
                     Let's work together to get you the settlement you deserve.
                   </p>
                 </div>
-                <button className="flex-shrink-0 px-4 sm:px-5 py-2 sm:py-3 bg-white text-[#7f1734] border-2 border-[#7f1734] rounded-xl font-medium hover:bg-[#7f1734] hover:text-white transition-colors duration-300 text-xl sm:text-2xl">
-                  🡥
+                <button 
+                  className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-white text-[#7f1734] border-2 border-[#7f1734] rounded-xl font-medium hover:bg-[#7f1734] hover:text-white transition-colors duration-300 text-xl sm:text-2xl"
+                  aria-label="Book a consultation"
+                >
+                  <span className="md:hidden">→</span>
+                  <span className="hidden md:inline">🡥</span>
                 </button>
               </div>
             </div>
